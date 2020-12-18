@@ -62,14 +62,25 @@
 
 @import '../../../node_modules/foundation-sites/scss/util/util';
 
+@import url("https://use.typekit.net/uak7yic.css");
+
+@import url("//hello.myfonts.net/count/3ccb63");
+  
+@font-face {
+  font-family: 'HelveticaLTWXX-Bold';
+  src: url('../fonts/HelveticaLTWXX-Bold/font.woff2') format('woff2'), url('../fonts/HelveticaLTWXX-Bold/font.woff') format('woff');
+}
+
+
+
 // 1. Global
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(934);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: #AF935B,
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
@@ -78,11 +89,12 @@ $foundation-palette: (
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
-$black: #0a0a0a;
-$white: #fefefe;
-$body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$black: #000;
+$white: #fff;
+$heading-white: #F5EFE5;
+$body-background: $black;
+$body-font-color: $white;
+$body-font-family: 'EB Garamond', serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -131,7 +143,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: orpheuspro, serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -846,7 +858,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $black;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;

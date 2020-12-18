@@ -45,3 +45,6 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 
 // Customize the WordPress admin
 // require_once(get_template_directory().'/functions/admin.php'); 
+
+// Custom Functions
+require_once(get_template_directory().'/functions/custom.php'); 

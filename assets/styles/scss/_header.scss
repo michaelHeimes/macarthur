@@ -1,0 +1,14 @@
+header.header {
+	
+	ul#main-nav {
+		li {
+			a {
+				font-size: rem-calc(13);
+				font-family: HelveticaLTWXX-Bold;
+				color: $white;
+				text-transform: uppercase;
+			}
+		}
+	}
+	
+}
