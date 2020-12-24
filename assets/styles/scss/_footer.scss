@@ -1,0 +1,47 @@
+footer {
+	margin: 0;
+	border-top: $border;
+	padding-top: 2.85em;
+	
+	.left {
+		
+		.footer-copy {
+			font-size: rem-calc(22);
+			line-height: 1;
+			
+			@include breakpoint(medium) {
+				padding-left: .18rem;
+			}
+			
+		}
+		
+	}
+	
+	.right {
+		text-align: right;
+		line-height: 1.40;
+					
+		a {
+			font-size: rem-calc(22);
+			color: $text-white;
+		}
+		
+		.social-wrap {
+			padding-top: 0.6em;
+			display: flex;
+			justify-content: flex-end;
+			
+			div {
+				margin-left: 1em;
+			}
+			
+		}
+
+	}
+	
+	.source-org {
+		padding-top: 1.9em;
+		padding-bottom: 1.45em;
+	}
+	
+}

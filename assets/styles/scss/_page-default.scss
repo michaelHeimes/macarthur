@@ -1,0 +1,90 @@
+.page-template-default {
+	
+	.banner {
+		padding-top: 7.95em;
+		padding-bottom: 6.6em;
+		
+		.grid-container {
+			@include breakpoint(medium) {
+				padding-left: 0;
+			}
+		}
+	}
+	
+	.grid-container:not(.fluid) {
+		margin-left: 0;
+		padding-left: 6.15em;
+	}
+	
+	.content-area {
+		position: relative;
+		border-bottom: $border;
+		
+		>.grid-container {
+			padding-top: 5.8em;
+		}
+		
+		.inner.grid-x {
+			padding-bottom: 7.95em;
+		}
+		
+		p,
+		ul,
+		ol {
+			font-size: rem-calc(20);
+		}
+		
+		blockquote,
+		blockquote p {
+			font-style: italic;
+			font-size: rem-calc(24);
+			color: $primary-color;
+			letter-spacing: 0;
+			line-height: 1.25;
+		}
+		
+		blockquote {
+			border: 0;
+			position: relative;
+			margin: 3.45em 0 0 2.15em;
+			padding: 2.6em 3.2em 1.63em;
+			
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: -1.6em;
+			width: 80%;
+			border-bottom: $border;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: -1.6em;
+			left: 0;
+			height: 33%;
+			border-left: $border;
+		}
+			
+		}
+		
+	}
+	
+	.resources {
+		.heading-wrap {
+			padding-top: 6.9em;
+			padding-bottom: 2.35em;
+		}
+		
+		.grid-x {
+			position: relative;
+		}
+		
+		.box-wrap {
+			padding-bottom: 4.1em;
+		}
+		
+	}
+	
+}

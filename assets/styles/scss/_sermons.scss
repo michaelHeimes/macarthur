@@ -1,0 +1,69 @@
+.page-template-sermons-page {
+	
+	.banner {
+		padding-top: 6.3em;
+		padding-bottom: 7.45em;
+		
+		h1 {
+			max-width: 540px;
+			margin-left: -19%;	
+			margin-bottom: .75em;
+		}
+		
+		.right {
+			
+			.copy-wrap {
+				
+				.author-date {
+					padding-bottom: 1.2em;
+				}
+				
+				.description-wrap {
+					padding-bottom: .6em;
+					
+					p {
+						max-width: 540px;
+						font-size: rem-calc(22);
+						line-height: 1;	
+					}
+				}
+			
+			}
+			
+			.links-wrap {
+				.button {
+					margin-right: 2em;
+				}
+			}
+
+		}
+		
+	}
+	
+	.sermons {
+		
+		.inner-padding {
+			padding-top: 7.2em;
+			
+			.single-sermon-row {
+				padding-bottom: 5.2em;
+				
+				h2 {
+					margin-bottom: 0.85em;
+				}
+				
+			&:last-child() {
+				padding-bottom: 4.1em;
+			}
+				
+				.box-wrap {
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+}

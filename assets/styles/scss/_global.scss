@@ -3,10 +3,257 @@
 Stylesheet: Global Stylesheet
 
 *************************************************/
+/*********************
+SASS VARIABLES
+*********************/
+$border: 1px solid $primary-color;
+
+/*********************
+TYPOGRAPHY
+*********************/
+h1,
+.h1,
+h2,
+.h2 {
+	line-height: 1.08;
+    margin-bottom: 0.32em;
+}
+
+h3,
+.h3 {
+	font-family: $body-font-family;
+}
+
 
 /*********************
 COMMON ELEMENT STYLES
 *********************/
+.banner {
+	position: relative;
+	border-bottom: $border;
+	padding-bottom: 8px;
+	
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		left: 0;
+		right: 0;
+		border-bottom: $border;
+	}
+		
+	h1 {
+		color: $primary-color;
+	}
+		
+}
+
+.grid-container.fluid.offset-content {
+	max-width: 91.8125em;
+	margin: auto;
+	margin-left: 12%;
+	margin-left: 17.8%;
+	
+	&.left-line {
+		position: relative;
+		
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -7px;
+			bottom: -7px;
+			border-left: $border;
+		}
+		
+	}
+	
+	.inner-padding {
+		padding-left: 6.25em;
+		padding-right: 6.25em;
+	}
+	
+}
+
+.box-wrap {
+	
+	&.sm {
+		margin-right: -5px !important;
+		margin-left: -5px !important;
+		
+		@include breakpoint(medium) {
+			margin-right: -5px !important;
+			margin-left: -5px !important;	
+		}
+	
+	}
+
+	.box {
+		margin-bottom: 2em;
+		
+		&.sm {
+			padding-right: 5px;
+			padding-left: 5px;
+			
+			.inner {
+				padding: 1.95em 1.85em 2.5em;
+			}
+			
+		}
+		
+		.inner {
+			min-height: 248px;
+			position: relative;
+			border: 1px solid $primary-color;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+					
+			.excerpt-wrap {
+				font-size: rem-calc(18);
+				color: #F5EFE5;
+				letter-spacing: 0;
+				line-height: 1;
+			}		
+		}
+		
+	&.sm {
+		
+		.date {
+			
+		}
+		
+		.date-tag {
+			padding-bottom: 1.3em;
+		}
+		
+		h3 {
+			font-family: $body-font-family;
+			font-size: rem-calc(22);
+			color: $primary-color;
+			letter-spacing: 0;
+			line-height: 1;
+			margin-bottom: .5em;
+		}
+		
+		.link-wrap {
+			margin-top: 1.35em;
+		}
+		
+	}
+		
+	}
+
+}
+
+.bottom-line {
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	width: 100%;
+	border-top: $border;
+}
+
+button,
+.button,
+.small-caps {
+	font-family: $font-helvetica;
+	text-transform: uppercase;
+	font-size: rem-calc(11);
+	color: $text-white;
+	letter-spacing: 1.65px;
+	line-height: 1;
+	
+&.underline {
+	display: inline-block;
+	position: relative;
+	
+&:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding-top: 6px;
+	bottom: -6px;
+	width: 100%;
+	border-bottom: 1px solid $text-white;
+}
+	
+}
+	
+}
+
+a.arrow-link {
+	white-space: nowrap;
+	img {
+		margin-left: 0.35em;
+		transition: 0.3s ease;
+	}
+	
+&:hover {
+	img {
+		transform: translateX(16px);
+	}
+}
+	
+}
+
+button,
+.button {
+	cursor: pointer;
+	border: $border;
+	padding: 3em 2.91em;
+	position: relative;
+	
+&:before,
+&:after {
+	content: '';
+	position: absolute;
+	border-bottom: $border;
+	left: -11px;
+    right: -11px;
+    width: calc(100% + 22px);
+    transition: all .3s ease;
+}
+
+&:before {
+	top: 10px;
+}
+
+&:after {
+	bottom: 10px;
+}
+
+&:hover {
+	
+	&:before,
+	&:after {
+		left: 0px;
+	    right: 0px;
+	    width: 100%;		
+	}
+	
+}
+	
+&.no-style {
+	display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+	background-color: transparent;
+    font-size: .9rem;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+}
+	
+}
 
 
 
@@ -37,12 +284,14 @@ POSTS & CONTENT STYLES
 	}
 
 	.alignleft, img.alignleft { 
-		margin-right: 1.5em; 
+		margin-right: 4.25em;
+		margin-bottom: 2.25em;
 		display: inline; 
 		float: left; 
 	}
 	.alignright, img.alignright { 
-		margin-left: 1.5em; 
+		margin-left: 4.25em;
+		margin-bottom: 2.25em;
 		display: inline; 
 		float: right; 
 	}

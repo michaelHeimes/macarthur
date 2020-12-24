@@ -1,14 +1,90 @@
 header.header {
+	z-index: 1;
+	border-bottom: $border;
+
+	.top-bar {
+		max-width: 1530px;
+		margin: auto;
+		min-height: 117px;
+		padding: 0;
 	
-	ul#main-nav {
-		li {
-			a {
-				font-size: rem-calc(13);
-				font-family: HelveticaLTWXX-Bold;
-				color: $white;
-				text-transform: uppercase;
+		.top-bar-left {
+			
+			ul.menu {
+				
+				li {
+					position: relative;
+					
+					a {
+						
+					&.pinned-logo {
+						opacity: 0;
+						transition: opacity .25s ease, top 0s linear;
+					}
+				
+					&.load-logo {
+						opacity: 1;
+						position: absolute;
+						left: 50%;
+						top: -33px;
+						transform: translateX(-50%);
+						transition: opacity .25s ease;
+					}
+					
+					}
+				
+				}
+				
 			}
+			
 		}
+		
+		ul#main-nav {
+			
+			li {
+				
+				a {
+					font-size: rem-calc(13);
+					font-family: $font-helvetica;
+					text-transform: uppercase;
+					transition: all .25s ease;
+				}
+				
+				&:hover {
+					color: $primary-color;
+				}
+				
+				&:not(.active) a {
+					color: $white;
+					
+									&:hover {
+					color: $primary-color;
+				}
+					
+				}
+				
+			}
+					
+		}
+		
 	}
+	
+&.is-stuck {
+	
+	.top-bar .top-bar-left ul.menu li a {
+	
+		&.pinned-logo {
+			opacity: 1;
+		}
+	
+		&.load-logo {
+			opacity: 0;
+			top: -100px;
+			transition: opacity .25s ease, top 0s linear .26s;
+		}
+		
+	}
+	
+}
 	
 }

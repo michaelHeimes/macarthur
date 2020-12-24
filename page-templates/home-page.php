@@ -17,22 +17,26 @@ get_header(); ?>
 					
 					<div class="inner grid-container fluid">
 						
-						<?php if( $small_heading = get_field('ph_small_heading') ):?>
-						<h2><?php echo $small_heading;?></h2>
-						<?php endif;?>
-						
-						<?php if( $large_heading = get_field('ph_large_heading') ):?>
-						<h1><?php echo $large_heading;?></h1>
-						<?php endif;?>
+						<div class="heading-wrap">
+							<?php if( $small_heading = get_field('ph_small_heading') ):?>
+							<h1><?php echo $small_heading;?></h2>
+							<?php endif;?>
+							
+							<?php if( $large_heading = get_field('ph_large_heading') ):?>
+							<h2><?php echo $large_heading;?></h1>
+							<?php endif;?>
+						</div>
 												
 					</div>
+					
+					<div class="mask"></div>
 					
 					<nav id="bh-drawer-nav" class="bh-drawer-nav">
 						
 						<?php if( have_rows('ph_tab_1') ):?>
 						<div class="drawer">
 							<?php while ( have_rows('ph_tab_1') ) : the_row();?>	
-							<div class="tab"><?php the_sub_field('tab_label');?></div>
+							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							
 							<div class="content">
 								<div class="inner">
@@ -48,7 +52,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -58,7 +62,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 										
 									</div>
@@ -72,7 +76,7 @@ get_header(); ?>
 						<?php if( have_rows('ph_tab_2') ):?>
 						<div class="drawer">
 							<?php while ( have_rows('ph_tab_2') ) : the_row();?>	
-							<div class="tab"><?php the_sub_field('tab_label');?></div>
+							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							
 							<div class="content">
 								<div class="inner">
@@ -88,7 +92,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -98,7 +102,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 										
 									</div>
@@ -112,7 +116,7 @@ get_header(); ?>
 						<?php if( have_rows('ph_tab_3') ):?>
 						<div class="drawer">
 							<?php while ( have_rows('ph_tab_3') ) : the_row();?>	
-							<div class="tab"><?php the_sub_field('tab_label');?></div>
+							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							
 							<div class="content">
 								<div class="inner">
@@ -128,7 +132,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -138,7 +142,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-										    <a class="arrow-link" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
 										<?php endif; ?>
 										
 									</div>
