@@ -24,7 +24,6 @@ h3,
 	font-family: $body-font-family;
 }
 
-
 /*********************
 COMMON ELEMENT STYLES
 *********************/
@@ -195,14 +194,14 @@ a.arrow-link {
 	
 &:hover {
 	img {
-		transform: translateX(16px);
+		transform: translateX(10px);
 	}
 }
 	
 }
 
-button,
-.button {
+button:not(.no-style),
+.button:not(.no-style) {
 	cursor: pointer;
 	border: $border;
 	padding: 3em 2.91em;

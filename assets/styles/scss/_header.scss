@@ -1,4 +1,5 @@
 header.header {
+	background-color: $black;
 	z-index: 1;
 	border-bottom: $border;
 
@@ -25,9 +26,7 @@ header.header {
 					&.load-logo {
 						opacity: 1;
 						position: absolute;
-						left: 50%;
 						top: -33px;
-						transform: translateX(-50%);
 						transition: opacity .25s ease;
 					}
 					
@@ -87,4 +86,8 @@ header.header {
 	
 }
 	
+}
+
+#off-canvas {
+	display: none;
 }

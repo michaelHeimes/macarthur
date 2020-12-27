@@ -1,0 +1,45 @@
+.page-template-articles-page {
+	.banner {
+		padding-top: 6.3em;
+		padding-bottom: 7.45em;
+		
+		h1 {
+			max-width: 540px;
+			margin-left: -19%;	
+			margin-bottom: .377em;
+		}
+		
+		.right {
+
+			.copy-wrap {
+				padding-bottom: 1.95em;
+				max-width: 540px;
+				font-size: rem-calc(22);
+				line-height: 1;	
+			}
+			
+			.btn-wrap {
+				.button {
+					margin-right: 2em;
+				}
+			}
+
+		}
+		
+	}
+	
+	.articles {
+		
+		h2 {
+			color: $primary-color;
+		}
+		
+		.filter-buttons-wrap {
+			button {
+				width: 206px;
+			}
+		}
+		
+	}
+	
+}

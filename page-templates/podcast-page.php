@@ -80,12 +80,17 @@ get_header(); ?>
 										<div class="box-wrap sm grid-x grid-padding-x">
 										
 											<?php 			
+												
+											$cat_term = get_field('podcast_name');   
+											
+											$cat = $cat_term->slug;
+																								
 										    $args = array(  
 										        'post_type' => 'podcast_post',
 										        'post_status' => 'publish',
 										        'posts_per_page' => 3, 
 										        'order' => 'ASC',
-										        'cat' => 'home',
+										        'cat' => $cat,
 										    );
 										
 										    $loop = new WP_Query( $args ); 
@@ -197,7 +202,8 @@ get_header(); ?>
 									    ?>
 -->
 									    
-					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="" post_type="podcast_post" order="DESC" transition_container="true" posts_per_page="5" cache="false"]'); ?>
+					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap" post_type="podcast_post" taxonomy="podcast_name" taxonomy_terms="' . $cat . '" taxonomy_operator="IN" order="DESC" transition_container="true" posts_per_page="5" cache="false"]'); ?>
+																	
 									
 									</div>
 								</div>

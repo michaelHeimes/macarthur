@@ -1,10 +1,10 @@
 jQuery( document ).ready(function($) {
-	
+		
 // 	Home Page Banner Nav Drawers
 	if ( $('nav#bh-drawer-nav').length ) {
 		
 		var maxWidth = 0;
-		var widestTab = null;
+		var widestSpan = null;
 		var $element;
 		
 		$("nav#bh-drawer-nav .tab").each(function(){
@@ -16,9 +16,7 @@ jQuery( document ).ready(function($) {
 			}
 			
 			$tabWidthConst = -widestSpan.outerWidth();
-			
-			console.log($tabWidthConst);
-			
+						
 			$('#bh-drawer-nav').css("transform", "translate(" + $tabWidthConst + "px)", "0px");
 			
 		});
@@ -69,11 +67,54 @@ jQuery( document ).ready(function($) {
 				
 			);
 				
-				
 		});
 	   
 	}
 	
+	
+// 	Home Page Improvement Slider
+	if ($('body').hasClass('home')) {
+		
+		$(window).on("load resize", function() {
+			var $button1Width = $('button#toggle-nav-1').width();
+			
+			$('.toggle-content-wrap .line-wrap').css('left', $button1Width * .5);
+		
+		});
+		
+		gsap.fromTo('.toggle-content-wrap .line', 1, {height: 0}, {height: '100%', ease: 'expo.out',
+			scrollTrigger: {
+			    trigger: '.improvement',
+			    start: 'top 40%',
+			    toggleActions: 'play none play reverse'
+			}
+		});		
+
+		gsap.fromTo('.toggle-content-wrap .circ.two', 1, {top: '0%'}, {top: '100%', ease: 'expo.out',
+			scrollTrigger: {
+			    trigger: '.improvement',
+			    start: 'top 40%',
+			    toggleActions: 'play none play reverse'
+			}
+		});
+
+	
+		$('.toggle-content-slider').slick({
+			fade: true,
+			arrows: false
+		});
+		
+		$('.toggle-nav-wrap button[data-slide]').click(function(e) {
+			e.preventDefault();
+			
+			$(this).addClass('active');
+			$(this).siblings('button').removeClass('active');
+			
+			var slideno = $(this).data('slide');
+			$('.toggle-content-slider').slick('slickGoTo', slideno - 1);
+		});
+			
+	}
 	
 // 	Home Page Accordion
 	if($('.accordion.last-active').length) {

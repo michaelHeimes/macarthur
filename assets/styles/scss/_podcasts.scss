@@ -60,9 +60,33 @@
 	}
 
 	.all-podcasts {
+		h2 {
+			margin-bottom: 1.01em;
+		}
+		
 		.inner-padding {
 			padding-top: 6.2em;
 			padding-bottom: 6.2em;
+			
+			.single-podcast {
+				margin-bottom: 4.35em;
+				
+				.inner  {
+					padding: 1.8em 3em 2.55em;
+				
+					h3 {
+						color: $primary-color;
+					}
+					
+					.excerpt-wrap {
+						padding-bottom: 0.8em;
+					}
+				
+				}
+				
+			}
+			
+			
 		}	
 	}
 

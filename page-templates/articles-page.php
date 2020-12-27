@@ -42,13 +42,13 @@ get_header(); ?>
 										<div class="copy-wrap">
 											
 											<?php the_field('hfa_excerpt');?>
-											
-											<div class="btn-wrap">
-												<a class="button sm" href="<?php echo esc_url( get_permalink() ); ?>">
-													Read More
-												</a>
-											</div>
-																					
+																																
+										</div>
+										
+										<div class="btn-wrap">
+											<a class="button sm" href="<?php echo esc_url( get_permalink() ); ?>">
+												Read More
+											</a>
 										</div>
 									
 									</div>
@@ -66,44 +66,47 @@ get_header(); ?>
 			    
 			    <section class="articles">
 				    
-				    <div class="header grid-container fluid">
-					    <div class="grid-x grid-padding-x">
+				    <div class="grid-container fluid offset-content left-line">
+						<div class="inner-padding grid-x grid-padding-x">
+
 						    <h2 class="cell small-12 text-center"><?php the_field('heading');?></h2>
-					    </div>
-				    </div>
-				    
-				    <div id="cat-filter" class="filter-buttons-wrap">
-					    <div class="grid-x grid-padding-x align-center">
 						    
-						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="">All</button></div>';
+						    <div class="filter-label cell small-12 small-caps text-center">Filter By</div>
+						    
+					    </div>
+				    
+				    <div id="cat-filter" class="filter-buttons-wrap grid-container fluid">
+					    <div class="btn-wrap grid-x grid-padding-x align-center" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
+						    
+						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="" data-equalizer-watch>All</button></div>';
 				
-						  $categories = get_categories(array(
-						    'show_option_all'    => '',
-						    'orderby'            => 'name',
-						    'order'              => 'ASC',
-						    'style'              => 'list',
-						    'show_count'         => 0,
-						    'hide_empty'         => 1,
-						    'use_desc_for_title' => 1,
-						    'child_of'           => 0,
-						    'feed'               => '',
-						    'feed_type'          => '',
-						    'feed_image'         => '',
-						    'exclude_tree'       => '',
-						    'include'            => '',
-						    'hierarchical'       => true,
-						    'title_li'           => __( 'Categories' ),
-						    'show_option_none'   => __('No categories'),
-						    'number'             => NULL,
-						    'echo'               => 1,
-						    'depth'              => 0,
-						    'current_category'   => 0,
-						    'pad_counts'         => 0,
-						    'walker'             => 'Walker_Category' 
-						      ));
-						  foreach ( $categories as $category ) :?>
+							$categories = get_categories(array(
+								'show_option_all'    => '',
+								'orderby'            => 'name',
+								'order'              => 'ASC',
+								'style'              => 'list',
+								'show_count'         => 0,
+								'hide_empty'         => 1,
+								'use_desc_for_title' => 1,
+								'child_of'           => 0,
+								'feed'               => '',
+								'feed_type'          => '',
+								'feed_image'         => '',
+								'exclude_tree'       => '',
+								'include'            => '',
+								'hierarchical'       => true,
+								'title_li'           => __( 'Categories' ),
+								'show_option_none'   => __('No categories'),
+								'number'             => NULL,
+								'echo'               => 1,
+								'depth'              => 0,
+								'current_category'   => 0,
+								'pad_counts'         => 0,
+								'walker'             => 'Walker_Category' 
+							  ));
+							foreach ( $categories as $category ) :?>
 						  
-						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="' . $category->slug . '">' . $category->name . '</button></div>';
+						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="' . $category->slug . '" data-equalizer-watch>' . $category->name . '</button></div>';
 						
 						  endforeach;?>
 					    </div>
