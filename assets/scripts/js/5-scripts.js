@@ -255,6 +255,24 @@ jQuery( document ).ready(function($) {
 		})
 	
 	}
+	
+// 	Mentorship Slider
+	if($('.testimonial-slider').length) {
+	
+		$('.testimonial-slider').slick({
+			fade: true,
+			arrows: false
+		});		
+		
+		$('.testimonials .slider-nav .prev').click(function(){ 
+			$('.testimonial-slider').slick('slickPrev');
+		} );
+		
+		$('.testimonials .slider-nav .next').click(function(e){
+			e.preventDefault(); 
+			$('.testimonial-slider').slick('slickNext');
+		} );
 
+	}
 
 });

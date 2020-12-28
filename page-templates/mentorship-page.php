@@ -9,19 +9,134 @@ get_header(); ?>
 	
 	<div class="content">
 	
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
+		<div class="inner-content">
 	
-		    <main class="main small-12 large-8 medium-8 cell" role="main">
+		    <main class="main" role="main">
+			    			    
+			    <section class="banner">
+				    
+				    <div class="columns-banner grid-container fluid offset-content">
+				    
+					    <div class="heading-wrap grid-x grid-padding-x">
+					
+							<h1 class="cell small-12"><?php the_field('ph_heading');?></h1>
+						
+					    </div>
+							
+						<?php if( have_rows('ph_icon_and_info_columns') ):?>
+						<div class="columns-wrap grid-x grid-padding-x">
+							<?php while ( have_rows('ph_icon_and_info_columns') ) : the_row();?>	
+							
+							<?php if( have_rows('single_column') ):?>
+								<?php while ( have_rows('single_column') ) : the_row();?>
+								
+								<div class="single-column cell small-12 medium-4">
+									
+									<div class="inner">
+									
+										<div class="icon-wrap">
+											<?php 
+											$image = get_sub_field('icon');
+											if( !empty( $image ) ): ?>
+											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+											<?php endif; ?>
+										</div>
+										
+										<h3><?php the_sub_field('heading');?></h3>
+										
+										<div class="copy-wrap">
+											<?php the_sub_field('copy');?>
+										</div>
+									
+									</div>
+									
+								</div>	
+							
+								<?php endwhile;?>
+							<?php endif;?>
+						
+							<?php endwhile;?>
+						</div>
+						<?php endif;?>
+						
+				    </div>
 				
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-			    	<?php get_template_part( 'parts/loop', 'page' ); ?>
+			    </section>	
 			    
-			    <?php endwhile; endif; ?>							
+			    <section class="testimonials">
+				    
+				    <div class="bg grid-container fluid offset-content left-line" style="background-image: url(<?php the_field('testimonials_background_image');?>)">	
+					    
+					    <div class="mask"></div>
+					    
+					    <div class="grid-x grid-padding-x">					    
+						    <div class="cell small-12 recent-pods-wrap">
+								<div class="inner-padding">
+									<div class="quotes">“”</div>
+					    					    
+									<?php if( have_rows('testimonials') ):?>
+									<div class="testimonial-slider">
+										<?php while ( have_rows('testimonials') ) : the_row();?>	
+									
+										<?php if( have_rows('single_testimonial') ):?>
+											<?php while ( have_rows('single_testimonial') ) : the_row();?>	
+											
+											<div class="single-testimonial">
+												
+												<h2><?php the_sub_field('large_text');?></h2>
+												<h3><?php the_sub_field('small_text');?></h3>
+												
+												<div class="author"><?php the_sub_field('quote_author_name');?><br><?php the_sub_field('quote_author_credentials');?></div>
+												
+											</div>
+											
+											<?php endwhile;?>
+										<?php endif;?>
+									
+										<?php endwhile;?>
+									</div>
+									<?php endif;?>
+									
+									<div class="slider-nav grid-x grid-padding-x align-right">
+										<button class="prev cell-shrink">PREV</button>
+										<button class="next cell-shrink">NEXT</button>
+									</div>
+								</div>  						    
+						    </div>
+					    </div>
+				    </div>
+				    
+					<div class="bottom-line"></div>
+				    
+			    </section>	
+			    
+			    <section class="form">
+				    <div class="bg grid-container fluid offset-content left-line">	
+					    					    
+					    <div class="grid-x grid-padding-x">					    
+						    <div class="cell small-12">
+								<div class="inner-padding">
+									<div class="grid-x grid-padding-x">	
+										
+										<div class="left cell small-12 medium-6 large-5">
+											<h2><?php the_field('form_heading');?></h2>
+										</div>
+
+										<div class="left cell small-12 medium-6 large-7">
+											<?php 
+												$formNum = get_field('form_id');
+												gravity_form( $formNum, false, false, false, '', true );
+											?>
+										</div>
+										
+									
+									</div>
+								</div>
+						    </div>
+					    </div>				    
+			    </section>				
 			    					
 			</main> <!-- end #main -->
-
-		    <?php get_sidebar(); ?>
 		    
 		</div> <!-- end #inner-content -->
 

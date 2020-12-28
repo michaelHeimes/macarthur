@@ -7,7 +7,6 @@
 			
 			h3 {
 				letter-spacing: 0;
-				line-height: 1;
 				margin-bottom: 1.03em;
 			}
 	
@@ -97,6 +96,10 @@
 				padding: 5.4em 5.1em;
 				font-size: rem-calc(20);
 				line-height: 1;
+			
+				.grid-container:not(.fluid) {
+					margin: 0;
+				}
 			
 			}	
 		}

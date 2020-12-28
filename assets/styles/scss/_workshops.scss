@@ -1,0 +1,76 @@
+.page-template-workshops-page {
+	font-size: rem-calc(20);
+	color: $white;
+	letter-spacing: 0;
+	line-height: 1.25;	
+	
+	.banner {
+		padding-top: 5.55em;
+		padding-bottom: 5.3em;
+	}
+	
+	.inner-padding {
+		padding-top: 5.75em;
+	}
+	
+	.single-workshop {
+		max-width: 960px;
+		
+	&:not(:last-child) {
+		margin-bottom: 6.625em;
+	}	
+	
+		.img-wrap { 
+			img {
+				max-width: 334px;
+			}
+		}
+		
+		h3 {
+			margin-bottom: 0.75em;
+		}
+		
+		.copy-wrap {
+			padding-bottom: 2.25em;
+		}
+		
+	}
+	
+}
+
+.page-template-single-workshop-page {
+	font-size: rem-calc(20);
+	color: $white;
+	letter-spacing: 0;
+	line-height: 1.25;	
+	
+	.banner {
+		padding-top: 5.55em;
+		padding-bottom: 5.3em;
+		
+		.info-wrap {
+			div {
+				margin-bottom: 0.75em;
+			}
+		}
+		
+	}
+	
+	.inner-padding {
+		padding-top: 5.75em;
+		padding-bottom: 5.75em;
+	}
+	
+	.copy {
+		position: relative;
+		border-bottom: $border;
+	}
+	
+	.form {
+		h2 {
+			color: $primary-color;
+		}
+	}
+	
+}
+

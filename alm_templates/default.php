@@ -1,6 +1,6 @@
 <?php if( get_post_type(get_the_ID()) == 'post'):?>
 	
-	<div class="article-card cell box small-12 medium-6 tablet-4" data-id="inspiration_cards" data-category="<?php $categories = get_the_category();
+	<div class="article-card cell box sm small-12 medium-6 tablet-4" data-id="inspiration_cards" data-category="<?php $categories = get_the_category();
 	if ( ! empty( $categories ) ) {
 	    echo esc_html( $categories[0]->slug );   
 	} ?>"
@@ -8,11 +8,24 @@
 				
 		<div class="inner" data-equalizer-watch>
 			
-			<div class="cat">
+			<div class="top">
+			
+				<div class="date-tag">
+					<span class="small-caps">
+						<?php $categories = get_the_category();
+						if ( ! empty( $categories ) ) {
+						    echo esc_html( $categories[0]->name );   
+						} ?>
+					</span>
+				</div>
+		
+				<h3><?php the_title();?></h3>
 				
 			</div>
-	
-			<h3><?php the_title();?></h3>
+			
+			<a class="arrow-link small-caps" href="<?php echo get_permalink(); ?>"><span class="small-caps underline">Read More</span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+			
+			<div class="bottom-line"></div>
 	
 		</div>
 		

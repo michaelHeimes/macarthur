@@ -154,8 +154,10 @@ get_header(); ?>
 						    	<div class="grid-x grid-padding-x">
 							    	<div class="cell small-12">
 								    	<div class="inner-padding">
-									    	<h3><?php the_field('about_heading');?></h3>
-											<p><?php the_field('about_copy');?></p>
+									    	<div class="grid-container">
+										    	<h3><?php the_field('about_heading');?></h3>
+												<p><?php the_field('about_copy');?></p>
+									    	</div>
 								    	</div>
 							    	</div>
 						    	</div>
@@ -171,7 +173,6 @@ get_header(); ?>
 									<div class="inner-padding">
 											
 										<h2>All Episodes</h2>
-						    
 <!--
 										<?php 			
 									    $args = array(  

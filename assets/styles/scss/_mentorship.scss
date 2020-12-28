@@ -1,0 +1,72 @@
+.page-template-mentorship-page {
+	
+	.bg {
+		position: relative;
+		background-size: cover;
+		background-position: center center;
+		
+		.mask {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-image: linear-gradient(180deg, #000000 0%, rgba(36,34,36,0.00) 100%);
+		}
+		
+	}
+	
+	.testimonials {
+		border-bottom: $border;
+		position: relative;
+		
+		.quotes {
+			color: $primary-color;
+			font-family: $header-font-family;
+			font-size: rem-calc(192);
+			line-height: 1;
+			margin-bottom: -.56em;
+			position: relative;
+		}
+		
+		.inner-padding {
+			margin-top: 6.95em;
+		}
+		
+		.testimonial-slider {
+				
+			.single-testimonial {
+		
+				h3 {
+					line-height: 1;
+					margin-bottom: .95em;
+				}
+				
+				.author {
+					line-height: 1.4;
+				}
+		
+			}
+		
+		}
+		
+	}
+	
+	.form {
+		.inner-padding {
+			padding-top: 6.9em;
+			padding-bottom: 5.15em;
+		}
+		
+		.left {
+			margin-bottom: 1em;
+			
+			h2 {
+				color: $primary-color;
+			}
+			
+		}
+		
+	}
+	
+}

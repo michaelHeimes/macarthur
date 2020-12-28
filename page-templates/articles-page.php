@@ -67,7 +67,7 @@ get_header(); ?>
 			    <section class="articles">
 				    
 				    <div class="grid-container fluid offset-content left-line">
-						<div class="inner-padding grid-x grid-padding-x">
+						<div class="inner-padding heading-wrap grid-x grid-padding-x">
 
 						    <h2 class="cell small-12 text-center"><?php the_field('heading');?></h2>
 						    
@@ -115,14 +115,17 @@ get_header(); ?>
 				    
 				    <div class="articles-wrap">
 					    
-					    <div class="grid-container" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">				    
-					    	<?php 
-							$featured_post = get_field('featured_article', false, false);
-							$post__not_in = ($featured_post) ? implode(',', $featured_post) : '';
-							echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="filter-grid grid-x grid-margin-x grid-padding-x" post_type="post" order="DESC" transition_container="true" posts_per_page="9" cache="false" post__not_in="' . $post__not_in . '"]'); ?>
-							
+					    <div class="inner-padding">
+					    
+						    <div class="grid-container fluid" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">				    
+						    	<?php 
+								$featured_post = get_field('featured_article', false, false);
+								$post__not_in = ($featured_post) ? implode(',', $featured_post) : '';
+								echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap filter-grid grid-x grid-margin-x grid-padding-x" post_type="post" order="DESC" transition_container="true" posts_per_page="9" cache="false" post__not_in="' . $post__not_in . '"]'); ?>
+								
+						    </div>
+						
 					    </div>
-
 				    
 				    </div>
 			    </section>
