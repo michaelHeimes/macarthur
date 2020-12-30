@@ -127,7 +127,7 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium tablet large);
+$breakpoint-classes: (small medium tablet large xlarge);
 
 // 3. The Grid
 // -----------
@@ -154,9 +154,9 @@ $header-lineheight: 1;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
+    'h1': ('font-size': 42),
+    'h2': ('font-size': 42),
+    'h3': ('font-size': 28),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
@@ -243,7 +243,7 @@ $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;
 $accordion-item-background-hover: $light-gray;
 $accordion-item-padding: 1.25rem 1rem;
-$accordion-content-background: $white;
+$accordion-content-background: $black;
 $accordion-content-border: 1px solid $primary-color;
 $accordion-content-color: $body-font-color;
 $accordion-content-padding: 1rem;
@@ -405,13 +405,13 @@ $dropdownmenu-arrows: true;
 $dropdownmenu-arrow-color: $anchor-color;
 $dropdownmenu-arrow-size: 6px;
 $dropdownmenu-arrow-padding: 1.5rem;
-$dropdownmenu-min-width: 200px;
+$dropdownmenu-min-width: 215px;
 $dropdownmenu-background: null;
 $dropdownmenu-submenu-background: $white;
-$dropdownmenu-padding: $global-menu-padding;
+$dropdownmenu-padding: .8rem 1.4rem;
 $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
-$dropdownmenu-border: 1px solid $medium-gray;
+$dropdownmenu-border: 0px solid $medium-gray;
 $dropdown-menu-item-color-active: get-color(primary);
 $dropdown-menu-item-background-active: transparent;
 
@@ -808,15 +808,15 @@ $table-stack-breakpoint: medium;
 // --------
 
 $tab-margin: 0;
-$tab-background: $white;
+$tab-background: $black;
 $tab-color: $primary-color;
-$tab-background-active: $light-gray;
+$tab-background-active: $black;
 $tab-active-color: $primary-color;
 $tab-item-font-size: rem-calc(12);
-$tab-item-background-hover: $white;
+$tab-item-background-hover: $black;
 $tab-item-padding: 1.25rem 1.5rem;
-$tab-content-background: $white;
-$tab-content-border: $light-gray;
+$tab-content-background: $black;
+$tab-content-border: $primary-color;
 $tab-content-color: $body-font-color;
 $tab-content-padding: 1rem;
 
@@ -864,7 +864,7 @@ $topbar-background: $black;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
-$topbar-unstack-breakpoint: medium;
+$topbar-unstack-breakpoint: large;
 
 // 56. Xy Grid
 // -----------

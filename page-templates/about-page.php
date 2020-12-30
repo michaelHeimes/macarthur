@@ -76,7 +76,7 @@ get_header(); ?>
 									    <?php if( have_rows('single_row') ):?>
 									    	<?php while ( have_rows('single_row') ) : the_row();?>	
 									    	
-											<div class="single-row grid-x grid-padding-x align-bottom layout-<?php the_sub_field('layout');?>">									    	
+											<div class="single-row grid-x grid-padding-x align-middle layout-<?php the_sub_field('layout');?>">									    	
 									    		<div class="img-wrap cell small-12 medium-6">
 			
 													<?php 

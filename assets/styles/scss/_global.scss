@@ -27,6 +27,30 @@ h3,
 /*********************
 COMMON ELEMENT STYLES
 *********************/
+// 404 Error
+.error404 {
+	.heading-wrap {
+		padding-top: 7em;
+		padding-bottom: 5.3em;
+		
+		h1 {
+			color: $primary-color;
+			margin-bottom: .5em;
+		}
+		
+		p {
+			font-size: rem-calc(18);
+			color: $white;
+			letter-spacing: 0;
+			line-height: 1.2777;
+		}
+		
+		.btn-wrap {
+			padding-top: 1.9em;
+		}
+				
+	}
+}
 
 // All banners
 .banner {
@@ -54,7 +78,11 @@ COMMON ELEMENT STYLES
 .columns-banner {	
 	.heading-wrap,
 	.columns-wrap {
-		padding-left: 3.3em;
+		
+		@include breakpoint(tablet) {
+			padding-left: 3.3em;
+		}
+		
 	}
 	
 	.heading-wrap {
@@ -63,9 +91,10 @@ COMMON ELEMENT STYLES
 	}
 	
 	.columns-wrap {
-		padding-bottom: 7.2em;
+		padding-bottom: 4.2em;
 		
 		.single-column {
+			margin-bottom: 3rem;
 			.inner {
 				max-width: 265px;
 				
@@ -95,27 +124,47 @@ COMMON ELEMENT STYLES
 .grid-container.fluid.offset-content {
 	max-width: 91.8125em;
 	margin: auto;
-	margin-left: 12%;
-	margin-left: 17.8%;
 	
-	&.left-line {
-		position: relative;
-		
-		&:before {
-			content: '';
-			position: absolute;
-			z-index: 1;
-			left: 0;
-			top: -7px;
-			bottom: 0;
-			border-left: $border;
-		}
-		
+	@include breakpoint(medium) {
+		margin-left: 5%;
+	}
+
+	@include breakpoint(large) {
+		margin-left: 8%;
+	}
+
+	@include breakpoint(xlarge) {
+		margin-left: 17.8%;
 	}
 	
-	.inner-padding {
-		padding-left: 6.25em;
-		padding-right: 6.25em;
+	@include breakpoint(medium) { 
+		
+		&.left-line {
+			position: relative;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: 1;
+				left: 0;
+				top: -7px;
+				bottom: 0;
+				border-left: $border;
+			}
+			
+		}
+		
+		.inner-padding {
+			padding-left: 2em;
+			padding-right: 2em;
+			
+			@include breakpoint(large) {
+				padding-left: 6.25em;
+				padding-right: 6.25em;
+			}
+			
+		}
+	
 	}
 	
 &:last-child {
@@ -155,6 +204,7 @@ COMMON ELEMENT STYLES
 		}
 		
 		.inner {
+			height: 100%;
 			min-height: 248px;
 			position: relative;
 			border: 1px solid $primary-color;

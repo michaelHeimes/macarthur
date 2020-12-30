@@ -45,7 +45,7 @@ const SOURCE = {
 // 		FOUNDATION + '/dist/js/plugins/foundation.smoothScroll.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.magellan.js',
 		FOUNDATION + '/dist/js/plugins/foundation.sticky.js',
-// 		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
+		FOUNDATION + '/dist/js/plugins/foundation.tabs.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.responsiveAccordionTabs.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.toggler.js',
 // 		FOUNDATION + '/dist/js/plugins/foundation.tooltip.js',

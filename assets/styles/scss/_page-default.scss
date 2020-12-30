@@ -13,7 +13,12 @@
 	
 	.grid-container:not(.fluid) {
 		margin-left: 0;
-		padding-left: 6.15em;
+		padding-left: 0;
+		
+		@include breakpoint(medium) {
+			padding-left: 6.15em;
+		}
+		
 	}
 	
 	.content-area {
@@ -46,8 +51,13 @@
 		blockquote {
 			border: 0;
 			position: relative;
-			margin: 3.45em 0 0 2.15em;
-			padding: 2.6em 3.2em 1.63em;
+			margin: 3.45em 0 0 1.6em;
+			padding: 1.1em 1.25em 1.63em;
+			
+			@include breakpoint(medium) {
+				padding: 2.6em 3.2em 1.63em;
+				margin: 3.45em 0 0 2.15em;
+			}
 			
 		&:before {
 			content: '';

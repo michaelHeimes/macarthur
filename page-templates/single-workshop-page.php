@@ -38,9 +38,9 @@ get_header(); ?>
 
 					<div class="grid-container fluid offset-content left-line">
 						<div class="inner-padding grid-x grid-padding-x">
-							
-							<?php the_field('copy');?>
-							
+							<div class="cell small-12">
+								<?php the_field('copy');?>
+							</div>
 						</div>
 					</div>					
 				

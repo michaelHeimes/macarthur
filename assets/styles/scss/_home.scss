@@ -1,7 +1,9 @@
 .home {
 	
 	.grid-container.fluid.offset-content {
-		margin-left: 8%;
+		@include breakpoint(medium) { 
+			margin-left: 8%;
+		}
 	}
 	
 	button:not(.third),
@@ -12,7 +14,15 @@
 	.banner {
 		overflow: hidden;
 		position: relative;
-		height: 781px;
+		padding-top: 11em;
+		
+		@include breakpoint(medium) {
+			min-height: 781px;
+			display: flex;
+		    align-items: flex-end;
+		    justify-content: flex-start;
+		    width: 100%;
+		}
 		
 		.bg {
 			background-size: cover;
@@ -25,6 +35,7 @@
 		}
 
 		.inner {
+			margin: 0;
 			position: relative;
 			z-index: 1;
 			height: 100%;
@@ -41,14 +52,29 @@
 				
 				h1,
 				h2 {
+					font-style: italic;
 					max-width: 800px;
 					color: $text-white;
 				}
 				
 				h1 {
 					font-family: $body-font-family;
-					font-size: rem-calc(38);
+					font-size: rem-calc(23);
 					letter-spacing: 5.32px;
+					
+					@include breakpoint(medium) {
+						font-size: rem-calc(38);
+					}
+					
+				}
+				
+				h2 {
+					font-size: rem-calc(62);
+					
+					@include breakpoint(medium) {
+						font-size: rem-calc(92);
+					}
+					
 				}
 			
 			}
@@ -66,13 +92,17 @@
 		
 		.bh-drawer-nav {
 			position: absolute;
-			z-index: 2;
+			z-index: -1;
 			right: 0;
 			top: 0;
 			bottom: 8px;	
 			left: 100%;
 			display: flex;
 			flex-direction: column;
+			
+			@include breakpoint(medium) {
+				z-index: 2;
+			}
 			
 			.drawer {
 				margin-top: -1px;
@@ -83,6 +113,7 @@
 				transition: transform 1s ease;
 				
 				.tab {
+					background-color: $black;
 					padding: 2em 4.092em;
 				    transform: rotate(180deg);
 				    writing-mode: vertical-rl;
@@ -91,6 +122,7 @@
 				}
 				
 				.content {
+					background-color: $black;
 					border: $border;
 					padding: 2.8em;
 					flex: 1 0 auto;
@@ -111,11 +143,53 @@
 					
 				}
 				
-			&:hover {
-
-
-
 			}
+			
+		}
+		
+		.drawer-nav-mobile {
+			position: relative;
+			z-index: 1;
+			
+			.accordion {
+				background-color: $black;
+				
+				.accordion-item {
+				
+					.accordion-title {
+						border-left: 0;
+						border-right: 0;
+						
+						&:before {
+							display: none;
+						}
+						
+						&:hover,
+						&:focus {
+							background-color: $black;
+						}
+						
+					}
+	
+					.accordion-content {
+						border-top: 0;
+						
+						h3 {
+							font-size: rem-calc(28);
+							line-height: 1;
+						}
+						
+						.links-wrap {
+							padding-bottom: .4em;
+							
+							div {
+								padding-bottom: .75em;
+							}	
+						}
+						
+					}
+				
+				}
 				
 			}
 			
@@ -129,7 +203,9 @@
 		position: relative;
 		
 		.grid-container.fluid.offset-content .inner-padding {
-			padding-left: 3.35em;
+			@include breakpoint(medium) {
+				padding-left: 3.35em;
+			}
 		}
 		
 		.bg-wrap {
@@ -165,8 +241,13 @@
 		
 		.inner-padding {
 			position: relative;
-			padding-top: 9.5em;
-			padding-bottom: 5em;
+			padding-top: 3em;
+			padding-bottom: 1.65em;
+			
+			@include breakpoint(medium) {
+				padding-top: 9.5em;
+				padding-bottom: 5em;
+			}
 			
 			.toggle-wrap {
 				max-width: 660px;
@@ -175,19 +256,34 @@
 					position: relative;
 					z-index: 1;
 					color: $primary-color;
+					margin-bottom: 0.55em;
+					
+					@include breakpoint(medium) {
+						margin-bottom: 0.86em;
+					}
+					
 				}
 				
 				.toggle-content-wrap {
 					position: relative;	
 					z-index: 1;
-					padding-top: 7.7em;
-					padding-bottom: 3.5em;
+					padding-top: 2.8em;
+					
+					@include breakpoint(medium) {
+						padding-top: 6.55em;
+						padding-bottom: 3.5em;
+					}
 					
 					.line-wrap {
 						position: absolute;
+						opacity: 0;
 						top: 14px;
 						bottom: 25px;
 						left: 10%;
+						
+						@include breakpoint(medium) {
+							opacity: 1;
+						}
 						
 						.circ {
 							position: absolute;
@@ -213,14 +309,29 @@
 					
 					.toggle-content {
 						display: flex;
+						flex-wrap: wrap;
+						flex: 1 1 100%;
+						margin-bottom: 1.5em;
 						
 						.icon-wrap {
-							flex: 1 0 98px;
-							margin-right: 2em;
+							margin-bottom: 2.2em;
+							
+							@include breakpoint(medium) {
+								flex: 1 0 98px;
+								margin-right: 2em;
+							}
+							
 						}
 						
 						h3 {
 							margin-bottom: .42em;
+							
+							@media screen and (max-width: 640px) {
+								br {
+									display: none;
+								}
+							}
+							
 						}
 						
 						.text-wrap {
@@ -258,11 +369,21 @@
 					.third {
 					
 					&:not(:first-child) {
-						margin-left: 38px;
+						margin-left: 7px;
+						
+						@include breakpoint(medium) {
+							margin-left: 38px;
+						}
+						
 					}
 						
 					&:not(:last-child) {
-						margin-right: 38px;
+						margin-right: 7px;
+						
+						@include breakpoint(medium) {
+							margin-right: 38px;
+						}
+						
 					}
 						
 					&.and-third {
@@ -278,9 +399,13 @@
 					span {
 						display: inline-block;
 						border-bottom: $border;
-						width: 92px;
+						width: 32px;
 						position: relative;
 						top: -3px;
+						
+						@include breakpoint(medium) {
+							width: 92px;
+						}
 						
 					&.first {
 					}
@@ -296,7 +421,72 @@
 	}
 	
 	
-	.symposium-accordion {
+	.home-tabs {
+		
+		.tabs {
+			border-left: 0;
+			border-right: 0;
+			border-top: 0;
+			border-bottom: 0;
+			display: flex;
+			
+			li {
+				float: none;
+				flex: 1 0 auto;
+				border-left: $border;
+				border-right: $border;
+				border-bottom: $border;
+				
+			&:first-child {
+				border-left: 0;
+			}
+
+			&:last-child {
+				border-right: 0;
+			}
+				
+			&.is-active {
+				border-bottom: 0;
+			}
+				 
+				a {
+					display: flex;
+					justify-content: center;
+					font-size: rem-calc(26);
+					letter-spacing: 0;
+					text-align: center;
+					line-height: 1.07;
+					padding-top: 1.45em;
+					padding-bottom: 1.15em;
+					
+					span {
+						writing-mode: vertical-rl;
+					}
+				}
+			}
+			
+		}
+		
+		.tabs-content {
+			border-left: 0;
+			border-right: 0;
+			padding-top: 2.3em;
+			padding-bottom: 1.5em;
+			
+			h2 {
+				margin-bottom: .65em;
+			}
+			
+			p {
+				margin-bottom: 2.3em;
+			}
+			
+		}
+		
+	}
+	
+	
+	.home-accordion {
 		position: relative;
 		padding-bottom: 8px;
 		border-bottom: $border;
@@ -307,13 +497,13 @@
 			display: flex;
 		
 			.accordion {
-				background-color: black;
 				width: 690px;
 				transform: rotate(-90deg);
 				
 				.accordion-item {
 				
 					a.accordion-title {
+						background-color: $black;
 						padding: 1em 2.2em 1.25em 1em;
 						border-left: 0 solid;
 						border-right: 0 solid;
@@ -386,26 +576,27 @@
 		
 		.single-row {
 			position: relative;
-			margin-top: 10.9em;
-			padding-bottom: 8.75em;
+			margin-top: 3.05em;
+			padding-bottom: 2em;
+			flex-direction: row-reverse;
 			justify-content: flex-end;
 			
-			.left {
-				padding-left: 0;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left: -10%;
-				height: 100%;
-				display: flex;
-			    justify-content: flex-end;
-			    align-items: flex-end;
+			@include breakpoint(medium) {
+				margin-top: 10.9em;
+				padding-bottom: 8em;
 			}
-			
-			.right {
-				text-align: right;
+						
+			.left {
+				position: relative;
+				z-index: 1;
+				text-align: left;
 				max-width: 750px;
-				margin-right: 8%;
+				margin-bottom: 4em;
+				
+				@include breakpoint(medium) {
+					margin-right: 8%;
+					margin-bottom: 0;
+				}
 				
 				h2 {
 					color: $primary-color;
@@ -415,7 +606,81 @@
 				
 				.inner {
 					position: relative;
-					padding: 2.6em 3.2em 0;
+					padding: 1.4em 4em 0;
+					
+					@include breakpoint(medium) {
+						padding: 2.6em 3.2em 0;
+					}
+					
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: .8em;
+					width: 80%;
+					border-bottom: $border;
+					
+					@include breakpoint(medium) {
+						left: -1.6em;
+					}
+				}
+		
+				&:after {
+					content: '';
+					position: absolute;
+					top: -1.6em;
+					left: 2.4em;
+					height: 33%;
+					border-left: $border;
+					
+					@include breakpoint(medium) {
+						left: 0;
+					}
+					
+				}
+				
+				}
+				
+			}
+			
+			.right {
+				padding-left: 0;
+				height: 100%;
+				display: flex;
+			    justify-content: flex-end;
+			    align-items: flex-end;
+			    
+			    @include breakpoint(medium) {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					padding-right: 0;
+					left: auto;
+					right: 0;
+				}
+				
+			}
+			
+		&:nth-child(even) {
+			padding-bottom: 0;
+			flex-direction: row;
+			justify-content: flex-end;
+						
+			.left {
+				
+				@include breakpoint(medium) {
+					text-align: right;
+					padding-bottom: 12em;
+				}
+			
+				.inner {
+					position: relative;
+					
+					padding: 1.4em 4em 0;
+						
+					@include breakpoint(medium) {
+						padding: 2.6em 3.2em 0;
+					}
 					
 				&:before {
 					content: '';
@@ -424,6 +689,11 @@
 					right: -1.6em;
 					width: 80%;
 					border-bottom: $border;
+					
+					@include breakpoint(medium) {
+						left: auto;
+					}
+					
 				}
 		
 				&:after {
@@ -433,51 +703,26 @@
 					right: 0;
 					height: 33%;
 					border-left: $border;
-				}
+					
+					@include breakpoint(medium) {
+						left: auto;
+					}
 					
 				}
 				
+					
+				}
+			
 			}
-			
-		&:nth-child(odd) {
-			flex-direction: row-reverse;
-			justify-content: flex-end;
-			
-			.left {
-				padding-right: 0;
-				left: auto;
-				right: 0;
-			}
-			
+						
 			.right {
-				text-align: left;
-			
-				.inner {
-					position: relative;
-					padding: 2.6em 3.2em 0;
-					
-				&:before {
-					content: '';
-					position: absolute;
-					top: 0;
-					left: -1.6em;
-					width: 80%;
-					border-bottom: $border;
-				}
-		
-				&:after {
-					content: '';
-					position: absolute;
-					top: -1.6em;
-					left: 0;
-					height: 33%;
-					border-left: $border;
-				}
-				
-				}
-			
+			    
+			    @include breakpoint(medium) {
+					left: -10%;				    
+			    }
+			    
 			}
-			
+						
 		}
 		
 		}

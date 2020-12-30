@@ -34,7 +34,6 @@ get_header(); ?>
 						<div class="inner-padding">	
 							<?php while ( have_rows('workshops') ) : the_row();?>
 		
-		
 								<?php if( have_rows('single_workshop') ):?>
 									<?php while ( have_rows('single_workshop') ) : the_row();?>	
 									

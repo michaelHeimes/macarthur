@@ -76,10 +76,11 @@ get_header(); ?>
 					    </div>
 				    
 				    <div id="cat-filter" class="filter-buttons-wrap grid-container fluid">
-					    <div class="btn-wrap grid-x grid-padding-x align-center" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
+					    <div class="btn-wrap grid-x grid-padding-x align-center">
 						    
-						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="" data-equalizer-watch>All</button></div>';
-				
+						   <div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="">All</button></div>
+						   
+						   <?php 
 							$categories = get_categories(array(
 								'show_option_all'    => '',
 								'orderby'            => 'name',
@@ -104,9 +105,9 @@ get_header(); ?>
 								'pad_counts'         => 0,
 								'walker'             => 'Walker_Category' 
 							  ));
-							foreach ( $categories as $category ) :?>
+							foreach ( $categories as $category ) :
 						  
-						   <?php echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="' . $category->slug . '" data-equalizer-watch>' . $category->name . '</button></div>';
+						   echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="' . $category->slug . '">' . $category->name . '</button></div>';
 						
 						  endforeach;?>
 					    </div>
@@ -117,7 +118,7 @@ get_header(); ?>
 					    
 					    <div class="inner-padding">
 					    
-						    <div class="grid-container fluid" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">				    
+						    <div class="grid-container fluid">				    
 						    	<?php 
 								$featured_post = get_field('featured_article', false, false);
 								$post__not_in = ($featured_post) ? implode(',', $featured_post) : '';

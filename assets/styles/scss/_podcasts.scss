@@ -18,7 +18,7 @@
 					display: inline-flex;
 					border: 1px solid $primary-color;
 		
-				button {
+				button.tabs-title {
 					width: 124px;
 					height: 50px;
 					text-transform: uppercase;
@@ -28,11 +28,24 @@
 					text-align: center;
 					line-height: 1;
 					
-				&.active {
-					cursor: default;
-					background-color: $primary-color;
-				}
-								
+					&.is-active {
+						cursor: default;
+						background-color: $primary-color;
+					}
+					
+					a {
+						color: $white;
+					&[aria-selected=true] {
+						color: $white;
+						background-color: $primary-color;
+					}
+					
+					&:hover {
+						background-color: transparent;
+					}
+					
+					}
+					
 				}
 				
 			}
@@ -41,15 +54,12 @@
 	
 	}
 	
-	#dynamic-height-wrapper {
-		transition: height .3s ease;
-		
-		.toggle-section {
-			position: absolute;
-			width: 100%;
-		}
-		
+	.tabs-panel,
+	.tabs-content {
+		padding: 0;
+		border: 0;
 	}
+	
 	
 	.recent-pods-wrap {
 		.inner-padding {
@@ -93,9 +103,13 @@
 		
 		.copy-wrap {
 			.inner-padding {
-				padding: 5.4em 5.1em;
+				padding: 3.4em 0em;
 				font-size: rem-calc(20);
 				line-height: 1;
+				
+				@include breakpoint(medium) {
+					padding: 5.4em 5.1em;
+				}
 			
 				.grid-container:not(.fluid) {
 					margin: 0;

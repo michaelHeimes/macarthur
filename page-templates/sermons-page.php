@@ -17,7 +17,7 @@ get_header(); ?>
 				    
 				    <div class="grid-container fluid">
 				    
-					    <div class="grid-x grid-padding-x align-bottom">
+					    <div class="inner grid-x grid-padding-x align-middle">
 						    
 						    <div class="left cell small-12 medium-6">
 							    <?php 

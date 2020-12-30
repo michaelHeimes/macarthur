@@ -3,8 +3,13 @@
 	.alternating-rows {
 		
 		.single-row {
-			margin-top: 7.5em;
-			margin-bottom: 7.5em;
+			margin-top: 2.5em;
+			margin-bottom: 2.5em;
+			
+			@include breakpoint (medium) {
+				margin-top: 7.5em;
+				margin-bottom: 7.5em;				
+			}
 			
 			h2 {
 				color: $primary-color;
@@ -22,7 +27,11 @@
 			
 			h2 {
 				position: relative;
-				left: -9.3rem;
+				
+				@include breakpoint (medium) {
+					left: -9.3rem;
+				}
+				
 			}
 			
 		}
@@ -31,7 +40,10 @@
 			flex-direction: row-reverse;
 							
 			.bottom {
-				padding-left: 9.3rem;
+				
+				@include breakpoint (large) {
+					padding-left: 9.3rem;				
+				}
 			}
 			
 		}

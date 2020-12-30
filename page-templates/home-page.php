@@ -21,15 +21,171 @@ get_header(); ?>
 						
 						<div class="heading-wrap">
 							<?php if( $small_heading = get_field('ph_small_heading') ):?>
-							<h1><?php echo $small_heading;?></h2>
+							<h1><?php echo $small_heading;?></h1>
 							<?php endif;?>
 							
 							<?php if( $large_heading = get_field('ph_large_heading') ):?>
-							<h2><?php echo $large_heading;?></h1>
+							<h2><?php echo $large_heading;?></h2>
 							<?php endif;?>
 						</div>
 												
 					</div>
+					
+					<nav class="drawer-nav-mobile hide-for-tablet">	
+	
+						<div class="accordion" data-accordion>
+							
+							<?php if( have_rows('ph_tab_1') ):?>
+							<div class="accordion-item" data-accordion-item>
+								<?php while ( have_rows('ph_tab_1') ) : the_row();?>
+								
+									<a href="#" class="accordion-title small-caps text-center"><?php the_sub_field('tab_label');?></a>
+						
+									<div class="accordion-content" data-tab-content>
+										<div class="grid-container">
+											<div class="grid-x grid-padding-x">
+												<div class="cell small-12">
+													<h3><?php the_sub_field('link_heading');?></h3>
+													
+													<div class="links-wrap">
+														
+														<?php 
+														$link = get_sub_field('link_1');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+				
+														<?php 
+														$link = get_sub_field('link_2');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<?php endwhile;?>
+							</div>
+							<?php endif;?>	
+	
+							<?php if( have_rows('ph_tab_2') ):?>
+							<div class="accordion-item" data-accordion-item>
+								<?php while ( have_rows('ph_tab_2') ) : the_row();?>
+								
+									<a href="#" class="accordion-title small-caps text-center"><?php the_sub_field('tab_label');?></a>
+						
+									<div class="accordion-content" data-tab-content>
+										<div class="grid-container">
+											<div class="grid-x grid-padding-x">
+												<div class="cell small-12">
+													<h3><?php the_sub_field('link_heading');?></h3>
+													
+													<div class="links-wrap">
+														
+														<?php 
+														$link = get_sub_field('link_1');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+				
+														<?php 
+														$link = get_sub_field('link_2');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<?php endwhile;?>
+							</div>
+							<?php endif;?>	
+							
+							<?php if( have_rows('ph_tab_3') ):?>
+							<div class="accordion-item" data-accordion-item>
+								<?php while ( have_rows('ph_tab_3') ) : the_row();?>
+								
+									<a href="#" class="accordion-title small-caps text-center"><?php the_sub_field('tab_label');?></a>
+						
+									<div class="accordion-content" data-tab-content>
+										<div class="grid-container">
+											<div class="grid-x grid-padding-x">
+												<div class="cell small-12">
+													<h3><?php the_sub_field('link_heading');?></h3>
+													
+													<div class="links-wrap">
+														
+														<?php 
+														$link = get_sub_field('link_1');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+				
+														<?php 
+														$link = get_sub_field('link_2');
+														if( $link ): 
+														    $link_url = $link['url'];
+														    $link_title = $link['title'];
+														    $link_target = $link['target'] ? $link['target'] : '_self';
+														    ?>
+														<div>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+														</div>
+														<?php endif; ?>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+									</div>
+									
+								<?php endwhile;?>
+							</div>
+							<?php endif;?>	
+	
+						</div>
+					
+					</nav>
+
 					
 					<div class="mask"></div>
 					
@@ -158,8 +314,7 @@ get_header(); ?>
 					</nav>
 					
 				</section><!-- banner -->
-						
-				
+										
 				<section class="improvement">
 										
 					<div class="inner lined">
@@ -175,6 +330,34 @@ get_header(); ?>
 												
 												<h2><?php the_field('imp_heading');?></h2>
 												
+													<div class="toggle-nav-wrap hide-for-medium">
+														
+														<?php if( have_rows('imp_slide_1') ):?>
+														<button class="toggle-nav-1 active third no-style" data-slide="1">
+															<?php while ( have_rows('imp_slide_1') ) : the_row();?>																		
+															<?php the_sub_field('button_label');?>
+															
+															<?php endwhile;?>
+														</button>
+														<?php endif;?>	
+														
+														<span class="first"></span>						
+				
+														<div class="third and-third">and</div>
+														
+														<span class="second"></span>
+				
+														<?php if( have_rows('imp_slide_2') ):?>
+														<button class="toggle-nav-2 third no-style" data-slide="2">
+															<?php while ( have_rows('imp_slide_2') ) : the_row();?>																		
+															<?php the_sub_field('button_label');?>
+															
+															<?php endwhile;?>
+														</button>
+														<?php endif;?>	
+														
+													</div>
+												
 												<div class="toggle-content-wrap">
 													
 													<div class="line-wrap">
@@ -185,11 +368,7 @@ get_header(); ?>
 													
 													<div class="grid-x grid-padding-x">
 														
-														<div class="left cell small-3">
-															
-														</div>
-														
-														<div class="right toggle-content-slider cell small-9">
+														<div class="right toggle-content-slider cell small-12 medium-9 medium-offset-3">
 															
 															<div id="toggle-1" class="toggle-content">
 																
@@ -248,10 +427,10 @@ get_header(); ?>
 													
 												</div>
 												
-												<div class="toggle-nav-wrap">
+												<div class="toggle-nav-wrap show-for-medium">
 													
 													<?php if( have_rows('imp_slide_1') ):?>
-													<button id="toggle-nav-1" class="active third no-style" data-slide="1">
+													<button class="toggle-nav-1 line-offset-const active third no-style" data-slide="1">
 														<?php while ( have_rows('imp_slide_1') ) : the_row();?>																		
 														<?php the_sub_field('button_label');?>
 														
@@ -266,7 +445,7 @@ get_header(); ?>
 													<span class="second"></span>
 			
 													<?php if( have_rows('imp_slide_2') ):?>
-													<button id="toggle-nav-2" class="third no-style" data-slide="2">
+													<button class="toggle-nav-2 third no-style" data-slide="2">
 														<?php while ( have_rows('imp_slide_2') ) : the_row();?>																		
 														<?php the_sub_field('button_label');?>
 														
@@ -307,8 +486,63 @@ get_header(); ?>
 					
 				</section>
 				
+				
+				<section class="home-tabs hide-for-medium">
+					
+					<?php if( have_rows('accordion_sections') ):?>
+					<ul class="tabs" data-tabs id="home-tabs">
+						<?php while ( have_rows('accordion_sections') ) : the_row();?>
+							<?php $tabNumber = get_row_index();?>
+							
+								<?php if( have_rows('single_section') ):?>
+									<?php while ( have_rows('single_section') ) : the_row();?>						
+										<li class="tabs-title<?php if($tabNumber == 1):?> is-active<?endif;?>"><a href="#panel-<?php echo $tabNumber;?>" <?php if($tabNumber == 1):?>aria-selected="true"<?endif;?>><span>No. 0<?php echo $tabNumber;?></a></li>
+									<?php endwhile;?>
+								<?php endif;?>
+							
+					  	<?php endwhile;?>
+					</ul>
+					<?php endif;?>
+
+<?php if( have_rows('accordion_sections') ):?>				
+<div class="tabs-content" data-tabs-content="home-tabs">
+	<?php while ( have_rows('accordion_sections') ) : the_row();?>
+	<?php $panelNumber = get_row_index();?>
+	
+		<?php if( have_rows('single_section') ):?>
+			<?php while ( have_rows('single_section') ) : the_row();?>	
+	
+			<div class="tabs-panel<?php if($panelNumber == 1):?> is-active<?endif;?>" id="panel-<?php echo $panelNumber;?>">
+				<div class="inner">
+				
+					<h2><?php the_sub_field('heading');?></h2>
+					
+					<p><?php the_sub_field('text');?></p>
+					
+					<?php 
+					$link = get_sub_field('link_button');
+					if( $link ): 
+					    $link_url = $link['url'];
+					    $link_title = $link['title'];
+					    $link_target = $link['target'] ? $link['target'] : '_self';
+					    ?>
+					    <a class="button lg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+					<?php endif; ?>
+			
+				</div>
+			</div>
+			
+			<?php endwhile;?>
+		<?php endif;?>
+
+
+<?php endwhile;?>
+</div>
+<?php endif;?>	
+				
+				</section>
 						
-				<section class="symposium-accordion">
+				<section class="home-accordion show-for-medium">
 					<div class="bg-wrap grid-container fluid offset-content left-line">
 						<div class="grid-x grid-padding-x">	
 							
@@ -377,21 +611,7 @@ get_header(); ?>
 						
 						<div class="single-row grid-x grid-padding-x">
 							
-							<div class="left cell small-12 medium-7">
-								
-								<div class="img-wrap">
-									
-								<?php 
-								$image = get_sub_field('image');
-								if( !empty( $image ) ): ?>
-								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-								<?php endif; ?>
-								
-								</div>
-								
-							</div>
-
-							<div class="right cell small-12">
+							<div class="left cell small-12">
 								
 								<div class="inner">
 								
@@ -405,6 +625,20 @@ get_header(); ?>
 									    ?>
 									    <a class="button lg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 									<?php endif; ?>
+								
+								</div>
+								
+							</div>
+							
+							<div class="right cell small-12 medium-7">
+								
+								<div class="img-wrap">
+									
+								<?php 
+								$image = get_sub_field('image');
+								if( !empty( $image ) ): ?>
+								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								<?php endif; ?>
 								
 								</div>
 								
@@ -420,21 +654,7 @@ get_header(); ?>
 						
 						<div class="single-row grid-x grid-padding-x">
 							
-							<div class="left cell small-12 medium-7">
-								
-								<div class="img-wrap">
-									
-								<?php 
-								$image = get_sub_field('image');
-								if( !empty( $image ) ): ?>
-								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-								<?php endif; ?>
-								
-								</div>
-								
-							</div>
-
-							<div class="right cell small-12">
+							<div class="left cell small-12">
 								
 								<div class="inner">
 								
@@ -448,6 +668,20 @@ get_header(); ?>
 									    ?>
 									    <a class="button lg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
 									<?php endif; ?>
+								
+								</div>
+								
+							</div>
+							
+							<div class="right cell small-12 medium-7">
+								
+								<div class="img-wrap">
+									
+								<?php 
+								$image = get_sub_field('image');
+								if( !empty( $image ) ): ?>
+								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								<?php endif; ?>
 								
 								</div>
 								

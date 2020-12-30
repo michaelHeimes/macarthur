@@ -53,10 +53,10 @@ get_header(); ?>
 									</div>
 								</div>
 								
-								<div class="content-toggle-buttons-wrap">
-									
-									<button id="about" class="no-style active">About</button>
-									<button id="episodes" class="no-style">Episodes</button>
+								<div class="content-toggle-buttons-wrap tabs" data-tabs id="podcast-tabs">
+																		
+									<button id="about" class="no-style tabs-title is-active"><a href="#about-podcasts">About</a></button>
+									<button id="episodes" class="no-style tabs-title"><a href="#all-podcasts">Episodes</a></button>
 																		
 								</div>
 							
@@ -68,9 +68,9 @@ get_header(); ?>
 				
 			    </section>	
 
-				<div id="dynamic-height-wrapper">
+				<div  class="tabs-content" data-tabs-content="podcast-tabs">
 			    
-				    <section id="about-podcasts" class="about-podcasts toggle-section" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
+				    <section id="about-podcasts" class="about-podcasts tabs-panel is-active" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
 					    <div class="grid-container fluid offset-content left-line">
 						    <div class="grid-x grid-padding-x">					    
 							    <div class="cell small-12 recent-pods-wrap">
@@ -166,7 +166,7 @@ get_header(); ?>
 				    
 				    </section>
 				    
-				    <section id="all-podcasts" class="all-podcasts toggle-section" style="display: none;">
+				    <section id="all-podcasts" class="all-podcasts tabs-panel">
 					    <div class="grid-container fluid offset-content left-line">
 						    <div class="grid-x grid-padding-x">
 								<div class="cell small-12">

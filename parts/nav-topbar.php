@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="top-bar" id="main-menu">
+<div class="top-bar grid-container fluid" id="main-menu">
 	<div class="top-bar-left">
 		<ul class="menu">
 			<li class="show-for-sr"><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
@@ -28,7 +28,21 @@
 			</li>		
 		</ul>
 	</div>
-	<div class="top-bar-right">
+	<div class="top-bar-right show-for-large">
 		<?php joints_top_nav(); ?>
 	</div>
+
+	<div class="mobile-btn-wrap hide-for-large">
+		<button class="mobile-nav-trigger no-style">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
+	</div>
+	
+	<div class="mobile-nav hide-for-large" style="display:none">
+		<?php joints_top_nav(); ?>
+	</div>
+	
 </div>
+

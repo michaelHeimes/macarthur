@@ -2,12 +2,34 @@
 	
 	.banner {
 		padding-top: 6.3em;
-		padding-bottom: 7.45em;
+		padding-bottom: 5.45em;
+		
+		.inner {
+			flex-direction: column;
+			
+			@include breakpoint(medium) {
+				flex-direction: row;
+			}
+			
+		}
 		
 		h1 {
 			max-width: 540px;
-			margin-left: -19%;	
 			margin-bottom: .75em;
+			
+			@include breakpoint(medium) {
+				margin-left: -19%;
+			}
+			
+		}
+		
+		.left {
+			margin-bottom: 2em;
+			
+			@include breakpoint(medium) {
+				margin-bottom: 0;
+			}
+			
 		}
 		
 		.right {
@@ -31,9 +53,19 @@
 			}
 			
 			.links-wrap {
-				.button {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				
+				a {
+					margin-bottom: 2rem;
+				
+				&.button {
 					margin-right: 2em;
 				}
+				
+				}
+				
 			}
 
 		}
