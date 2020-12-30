@@ -492,11 +492,16 @@ get_header(); ?>
 					<?php if( have_rows('accordion_sections') ):?>
 					<ul class="tabs" data-tabs id="home-tabs">
 						<?php while ( have_rows('accordion_sections') ) : the_row();?>
+						
 							<?php $tabNumber = get_row_index();?>
 							
-								<?php if( have_rows('single_section') ):?>
-									<?php while ( have_rows('single_section') ) : the_row();?>						
-										<li class="tabs-title<?php if($tabNumber == 1):?> is-active<?endif;?>"><a href="#panel-<?php echo $tabNumber;?>" <?php if($tabNumber == 1):?>aria-selected="true"<?endif;?>><span>No. 0<?php echo $tabNumber;?></a></li>
+									<?php if( have_rows('single_section') ):?>
+										<?php while ( have_rows('single_section') ) : the_row();?>						
+										<li class="tabs-title<?php if($tabNumber == 1):?> is-active<?php endif; ?>">
+											<a href="#panel-<?php echo $tabNumber;?>" <?php if($tabNumber == 1):?>aria-selected="true"<?php endif; ?>>
+												<span>No. 0<?php echo $tabNumber;?></span>
+											</a>
+										</li>
 									<?php endwhile;?>
 								<?php endif;?>
 							
@@ -504,42 +509,40 @@ get_header(); ?>
 					</ul>
 					<?php endif;?>
 
-<?php if( have_rows('accordion_sections') ):?>				
-<div class="tabs-content" data-tabs-content="home-tabs">
-	<?php while ( have_rows('accordion_sections') ) : the_row();?>
-	<?php $panelNumber = get_row_index();?>
-	
-		<?php if( have_rows('single_section') ):?>
-			<?php while ( have_rows('single_section') ) : the_row();?>	
-	
-			<div class="tabs-panel<?php if($panelNumber == 1):?> is-active<?endif;?>" id="panel-<?php echo $panelNumber;?>">
-				<div class="inner">
-				
-					<h2><?php the_sub_field('heading');?></h2>
+					<?php if( have_rows('accordion_sections') ):?>				
+					<div class="tabs-content" data-tabs-content="home-tabs">
+						<?php while ( have_rows('accordion_sections') ) : the_row();?>
+						<?php $panelNumber = get_row_index();?>
+						
+							<?php if( have_rows('single_section') ):?>
+								<?php while ( have_rows('single_section') ) : the_row();?>	
+						
+								<div class="tabs-panel<?php if($panelNumber == 1):?> is-active<?php endif;?>" id="panel-<?php echo $panelNumber;?>">
+									<div class="inner">
+									
+										<h2><?php the_sub_field('heading');?></h2>
+										
+										<p><?php the_sub_field('text');?></p>
+										
+										<?php 
+										$link = get_sub_field('link_button');
+										if( $link ): 
+										    $link_url = $link['url'];
+										    $link_title = $link['title'];
+										    $link_target = $link['target'] ? $link['target'] : '_self';
+										    ?>
+										    <a class="button lg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+										<?php endif; ?>
+								
+									</div>
+								</div>
+								
+								<?php endwhile;?>
+							<?php endif;?>
 					
-					<p><?php the_sub_field('text');?></p>
-					
-					<?php 
-					$link = get_sub_field('link_button');
-					if( $link ): 
-					    $link_url = $link['url'];
-					    $link_title = $link['title'];
-					    $link_target = $link['target'] ? $link['target'] : '_self';
-					    ?>
-					    <a class="button lg" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-					<?php endif; ?>
-			
-				</div>
-			</div>
-			
-			<?php endwhile;?>
-		<?php endif;?>
-
-
-<?php endwhile;?>
-</div>
-<?php endif;?>	
-				
+						<?php endwhile;?>
+					</div>
+					<?php endif;?>					
 				</section>
 						
 				<section class="home-accordion show-for-medium">
