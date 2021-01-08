@@ -35,13 +35,27 @@
 	</head>
 			
 	<body <?php body_class(); ?>>
+		
+		<div id="preloader" class="preloader" style="display: none;">
+			<div class="bg" style="background-image: url(<?php the_field('loader_background_image', 'options');?>)"></div>
+			
+			<?php 
+			$image = get_field('loader_logo', 'option');
+			if( !empty( $image ) ): ?>
+			<div class="img-wrap">
+			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+			    <div class="vertical-line" style="opacity: 0"><div class="circ"></div></div>
+			</div>
+			<?php endif; ?>
+			
+		</div>
 
 		<div class="off-canvas-wrapper">
 			
 			<!-- Load off-canvas container. Feel free to remove if not using. -->			
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 			
-			<div class="off-canvas-content" data-off-canvas-content>
+			<div class="off-canvas-content" style="opacity: 0;" data-off-canvas-content>
 				
 				<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
 							

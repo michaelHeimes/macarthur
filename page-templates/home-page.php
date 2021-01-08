@@ -193,6 +193,7 @@ get_header(); ?>
 						
 						<?php if( have_rows('ph_tab_1') ):?>
 						<div class="drawer">
+							<div class="lines-wrap"><span></span><span></span></div>
 							<?php while ( have_rows('ph_tab_1') ) : the_row();?>	
 							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							
@@ -233,6 +234,7 @@ get_header(); ?>
 
 						<?php if( have_rows('ph_tab_2') ):?>
 						<div class="drawer">
+							<div class="lines-wrap"><span></span><span></span></div>
 							<?php while ( have_rows('ph_tab_2') ) : the_row();?>	
 							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							
@@ -273,6 +275,7 @@ get_header(); ?>
 						
 						<?php if( have_rows('ph_tab_3') ):?>
 						<div class="drawer">
+							<div class="lines-wrap"><span></span><span></span></div>
 							<?php while ( have_rows('ph_tab_3') ) : the_row();?>	
 							<div class="tab small-caps"><?php the_sub_field('tab_label');?></div>
 							

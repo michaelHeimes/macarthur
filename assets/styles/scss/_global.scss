@@ -27,6 +27,82 @@ h3,
 /*********************
 COMMON ELEMENT STYLES
 *********************/
+// Preloader
+body {
+	overflow: hidden;
+	transition: opacity 0s ease;
+}
+
+.circ {
+	width: 9px;
+	height: 9px;
+	border-radius: 100%;
+	border: $border;
+}	
+
+.preloader {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	
+	.bg {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		filter: grayscale(1);
+		transition: all 3s ease;
+	}
+	
+	.img-wrap {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		transform: translateY(-50%);
+		
+		img {
+			position: relative;
+		    left: 50%;
+		    transform: translate(-50%, 100vh);
+		}
+		
+		.vertical-line {
+			position: absolute;
+			top: calc(100% + 57px);
+			left: 50%;
+			transform: translateX(-50%);
+			width: 1px;
+			background-color: $primary-color;
+		}
+		
+		.circ {
+			position: absolute;
+		    top: -9px;
+		    left: -4px;
+		}
+	
+	}
+	
+&.loaded {
+	.bg {
+		filter: grayscale(0);
+	}
+}
+	
+}
+
+
 // 404 Error
 .error404 {
 	.heading-wrap {

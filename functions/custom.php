@@ -4,8 +4,7 @@
  * Enqueue Google fonts.
  */
 function wpb_add_google_fonts() {
-
-wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet', false ); 
+	wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet', false ); 
 }
 
 // ACF Options

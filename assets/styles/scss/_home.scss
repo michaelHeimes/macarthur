@@ -14,14 +14,22 @@
 	.banner {
 		overflow: hidden;
 		position: relative;
-		padding-top: 11em;
+		padding-top: 7em;
 		
 		@include breakpoint(medium) {
+			padding-top: 11em;	
+		}
+		
+		@include breakpoint(tablet) {
 			min-height: 781px;
 			display: flex;
 		    align-items: flex-end;
 		    justify-content: flex-start;
 		    width: 100%;
+		}
+		
+		@media screen and (min-width: 992px) and (min-height: 790px) {
+			min-height: calc(100vh - 118px);
 		}
 		
 		.bg {
@@ -45,10 +53,12 @@
 			
 			.heading-wrap {
 				width: 100%;
-				max-width: 1530px;
-				margin-left: auto;
-				margin-right: auto;
+				max-width: 70%;
 				padding-bottom: 4.45em;
+				
+			@include breakpoint(xxlarge) {
+				max-width: 1530px;
+			}
 				
 				h1,
 				h2 {
@@ -62,7 +72,7 @@
 					font-size: rem-calc(23);
 					letter-spacing: 5.32px;
 					
-					@include breakpoint(medium) {
+					@include breakpoint(large) {
 						font-size: rem-calc(38);
 					}
 					
@@ -71,7 +81,15 @@
 				h2 {
 					font-size: rem-calc(62);
 					
-					@include breakpoint(medium) {
+					@include breakpoint(tablet) {
+						font-size: 5vw;
+					}
+					
+					@include breakpoint(large) {
+						font-size: rem-calc(68);
+					}
+					
+					@include breakpoint(xxlarge) {
 						font-size: rem-calc(92);
 					}
 					
@@ -100,11 +118,12 @@
 			display: flex;
 			flex-direction: column;
 			
-			@include breakpoint(medium) {
+			@include breakpoint(tablet) {
 				z-index: 2;
 			}
 			
 			.drawer {
+				position: relative;
 				margin-top: -1px;
 				flex: 1 1 33.3333%;
 				display: flex;
@@ -112,8 +131,126 @@
 				flex-wrap: nowrap;	
 				transition: transform 1s ease;
 				
+				.lines-wrap {
+					position: absolute;
+					width: 1px;
+					height: 100%;
+					top: 0;
+					bottom: 0;
+					left: -16px;
+					
+					span {
+						display: block;
+						width: 1px;
+						background-color: $primary-color;
+						transition: all 0.4s ease;
+					}
+				}
+				
+			&:nth-child(1) {
+				.lines-wrap {
+					span {
+						
+					&:nth-child(1) {
+						margin-top: 10px;
+						height: 39px;
+					}
+
+					&:nth-child(2) {
+						margin-top: 16px;
+						height: 62px;
+					}
+						
+					}
+				}
+			}
+
+			&:nth-child(2) {
+				.lines-wrap {
+					
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: -13px;
+					height: 1px;
+					background-color: $primary-color;
+					width: 0px;
+					transition: width .4s ease 0s;
+				}
+					
+					span {
+						position: absolute;
+						
+					&:nth-child(1) {
+						bottom: 96px;
+						height: 10px;
+					}
+
+					&:nth-child(2) {
+						height: 66px;
+						bottom: 13px;
+						transition: all 0.4s ease 0.4s;
+					}
+						
+					}
+				}
+			}
+
+			&:nth-child(3) {
+				.lines-wrap {
+					span {
+						position: absolute;
+						
+					&:nth-child(1) {
+						height: 94px;
+						bottom: 10px;
+					}
+
+					&:nth-child(2) {
+						bottom: 10px;
+						height: 94px;
+					}
+						
+					}
+				}
+			}
+			
+			&.hovered {
+				
+				&:nth-child(1) {
+					.lines-wrap span:nth-child(2) {
+						height: 74px;
+					}
+				}
+				
+				&:nth-child(2) {
+										
+					.lines-wrap {
+					
+					&:before {
+						width: 51px;
+						transition: width .4s ease .4s;
+					}
+					
+						span:nth-child(2) {
+							height: 91px;
+							transform: translateY(25px);
+							transition: all 0.4s ease;
+						}	
+						
+					}
+				}
+
+				&:nth-child(3) {
+					.lines-wrap span:nth-child(1) {
+						transform: translateY(-20px);
+					}
+				}
+				
+			}
+				
 				.tab {
-					background-color: $black;
 					padding: 2em 4.092em;
 				    transform: rotate(180deg);
 				    writing-mode: vertical-rl;
@@ -122,7 +259,6 @@
 				}
 				
 				.content {
-					background-color: $black;
 					border: $border;
 					padding: 2.8em;
 					flex: 1 0 auto;
@@ -288,10 +424,6 @@
 						.circ {
 							position: absolute;
 							z-index: 1;
-							width: 9px;
-							height: 9px;
-							border-radius: 100%;
-							border: $border;
 							background-color: $black;
 						}	
 						
@@ -497,10 +629,13 @@
 			display: flex;
 		
 			.accordion {
+				background-color: $black;
 				width: 690px;
 				transform: rotate(-90deg);
 				
 				.accordion-item {
+					background-color: $black;
+					max-height: 57vw;
 				
 					a.accordion-title {
 						background-color: $black;
@@ -530,6 +665,7 @@
 					}
 					
 					.accordion-content {
+						padding: 0;
 						background-color: black;
 						border-left: 0 solid;
 						border-right: 0 solid;
