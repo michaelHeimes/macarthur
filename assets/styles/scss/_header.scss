@@ -2,6 +2,21 @@ header.header {
 	background-color: $black;
 	z-index: 5;
 	border-bottom: $border;
+	
+	.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after,
+	.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
+		border: 0;
+	    margin-top: -8px;
+		content: url(/wp-content/themes/macarthur/assets/images/arrow-nav.svg);
+	}
+	
+	.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
+		right: 2em;
+	}
+	
+	.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
+	    right: 1em;
+	}
 
 	.top-bar {
 		max-width: 1530px;

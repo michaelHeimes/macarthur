@@ -1,7 +1,6 @@
 jQuery( document ).ready(function($) {
 	
 // 	Preloader
-
 	$(".preloader").fadeIn(300);
   	
 	$(window).on("load", function() {
@@ -192,8 +191,22 @@ jQuery( document ).ready(function($) {
 	
 // 	Home Page Accordion
 	if($('.home-accordion .accordion.last-active').length) {
+		
+		$('.home-accordion  .accordion-item').last().addClass('open');
+		
+		$(document).on('click', '.home-accordion a', function(e) {
+			e.preventDefault();
+			
+			$(this).parent().addClass('open');
+			$(this).parent().siblings().removeClass('open');
+			
+		});
+		
+/*
 		$('.home-accordion .accordion.last-active').foundation('toggle', $('.accordion.last-active >div:last-child a'));
 		$('.home-accordion .accordion.last-active >div:last-child a').next('.accordion-content').css('display', 'block');
+*/
+		
 	}
 
 	

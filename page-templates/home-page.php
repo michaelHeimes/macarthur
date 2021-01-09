@@ -548,14 +548,20 @@ get_header(); ?>
 					<?php endif;?>					
 				</section>
 						
-				<section class="home-accordion show-for-medium">
+				<?php $count = 0;
+					$acc_rows = get_field('accordion_sections');
+					if (is_array($acc_rows)) {
+					  $count = count($acc_rows);
+					};?>
+						
+				<section class="home-accordion rows-<?php echo $count;?> show-for-medium">
 					<div class="bg-wrap grid-container fluid offset-content left-line">
 						<div class="grid-x grid-padding-x">	
 							
 							<div class="inner">
 											
 								<?php if( have_rows('accordion_sections') ):?>
-									<div class="accordion last-active" data-accordion>
+									<div class="accordion last-active">
 									<?php while ( have_rows('accordion_sections') ) : the_row();?>	
 									
 										<?php $num = get_row_index();?>
@@ -563,12 +569,12 @@ get_header(); ?>
 										<?php if( have_rows('single_section') ):?>
 											<?php while ( have_rows('single_section') ) : the_row();?>	
 	
-											<div class="accordion-item" data-accordion-item>
+											<div class="accordion-item">
 												<a href="#" class="accordion-title">
 													<span>No. 0<?php echo $num;?></span>
 												</a>
 					
-												<div class="accordion-content" data-tab-content>
+												<div class="accordion-inner-content">
 													
 													<div class="inner">
 													
@@ -607,8 +613,7 @@ get_header(); ?>
 					<div class="bottom-line"></div>
 					
 				</section>
-				
-				
+								
 				<section class="alternating-rows">
 					<div class="grid-container fluid offset-content">
 							

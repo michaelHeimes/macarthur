@@ -1,3 +1,25 @@
+:root {
+
+	--col-2-width: 63px;
+
+	@include breakpoint(tablet) {
+		--col-2-width: 121px;
+	}
+
+	--col-3-width: 63px;
+
+	@include breakpoint(tablet) {
+		--col-3-width: 121px;
+	}
+
+	--col-4-width: 63px;
+
+	@include breakpoint(tablet) {
+		--col-4-width: 121px;
+	}
+
+}
+
 .home {
 	
 	.grid-container.fluid.offset-content {
@@ -630,23 +652,35 @@
 		
 			.accordion {
 				background-color: $black;
-				width: 690px;
-				transform: rotate(-90deg);
+				width: 100%;
+				display: flex;
 				
 				.accordion-item {
+					border-right: $border;
 					background-color: $black;
-					max-height: 57vw;
-				
+					display: flex;
+					transition: width 1s ease;
+					
+				&:last-child {
+					border-right: 0px solid;
+				}
+									
 					a.accordion-title {
+						border: 0;
 						background-color: $black;
-						padding: 1em 2.2em 1.25em 1em;
-						border-left: 0 solid;
-						border-right: 0 solid;
-						border-bottom: 0 solid;
+						font-size: rem-calc(23);
 						font-family: $header-font-family;
-						font-size: rem-calc(34);
 						letter-spacing: 0;
 						line-height: 1.088;
+						
+						@include breakpoint(tablet) {
+							font-size: rem-calc(34);									}
+						
+/*
+						@include breakpoint(tablet) {
+							padding: 1em 1.25em 1em;
+						}
+*/
 						
 						&:hover,
 						&:focus {
@@ -659,27 +693,31 @@
 						
 						span {
 							display: block;
-							transform: rotate(180deg);
+							writing-mode: vertical-rl;
 						}
 						
 					}
 					
-					.accordion-content {
-						padding: 0;
+					.accordion-inner-content {
+						opacity: 0;
 						background-color: black;
-						border-left: 0 solid;
-						border-right: 0 solid;
-						border-bottom: 0 solid;
-						border-top: 0 solid;
+						transition: opacity 0.3s ease;
 						
 						.inner {
-							padding-top: 3em;
-							padding-bottom: 3em;
-							transform: rotate(90deg);
+							padding: 3em 2em 3em 1em;
 							display: flex;
 							flex-direction: column;
 							align-items: flex-start;
 							justify-content: center;
+							
+							h2 {
+								font-size: rem-calc(38);
+								
+								@include breakpoint(large) {
+									font-size: rem-calc(71);
+								}
+								
+							}
 							
 							p {
 								font-size: rem-calc(22);
@@ -695,6 +733,15 @@
 						
 					}
 					
+				&.open {
+									
+					.accordion-inner-content {
+						opacity: 1;
+						transition: opacity 0.3s ease 1s;
+					}
+					
+				}
+					
 				&:last-child>.accordion-content {
 					border-bottom: 0px solid;
 				}
@@ -704,6 +751,76 @@
 			}
 		
 		}
+
+	&.rows-2 {
+		
+		.inner .accordion {
+			.accordion-item {
+				width: var(--col-3-width);
+				
+			&.open {
+				width: calc(100% - var(--col-3-width)*1);
+			}
+			
+				a.accordion-title {
+					padding: 1em .8em;
+					
+					@include breakpoint(tablet) {
+						padding: 1em 1.23em;
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+
+	&.rows-3 {
+		
+		.inner .accordion {
+			.accordion-item {
+				width: var(--col-3-width);
+				
+			&.open {
+				width: calc(100% - var(--col-3-width)*2);
+			}
+			
+				a.accordion-title {
+					padding: 1em .8em;
+					
+					@include breakpoint(tablet) {
+						padding: 1em 1.23em;
+					}
+					
+				}
+				
+			}
+		}
+		
+	}
+		
+	&.rows-4 {
+		.inner .accordion {
+			.accordion-item {
+				width: var(--col-4-width);
+				
+			&.open {
+				width: calc(100% - var(--col-4-width)*3);
+			}
+			
+				a.accordion-title {
+					padding: 1em .8em;
+					
+					@include breakpoint(tablet) {
+						padding: 1em 1.23em;
+					}
+					
+				}
+				
+			}
+		}
+	}
 		
 	}
 	

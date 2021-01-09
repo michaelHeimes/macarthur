@@ -210,6 +210,10 @@ body {
 	}
 
 	@include breakpoint(xlarge) {
+		margin-left: 11%;
+	}
+
+	@include breakpoint(xxlarge) {
 		margin-left: 17.8%;
 	}
 	
@@ -412,6 +416,13 @@ a.arrow-link {
 					padding: 1em !important;
 				}
 				
+				.gfield_select {
+					background-image: url(../../assets/images/arrow-form.svg);
+					background-repeat: no-repeat;
+				    background-size: auto;
+				    background-position: 94% 50%;
+				}
+				
 				.gfield_html {
 					font-size: rem-calc(22);
 					color: $white;
@@ -429,6 +440,15 @@ a.arrow-link {
 				li.gfield,
 				li.gfield.field_sublabel_above.field_description_below+li.gfield {
 					margin-top: .5em;
+				}
+				
+				select {
+					appearance: none;
+				
+				&::-ms-expand {
+					display: none;
+				}
+					
 				}
 				
 			}

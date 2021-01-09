@@ -98,8 +98,12 @@ get_header(); ?>
 									<?php endif;?>
 									
 									<div class="slider-nav grid-x grid-padding-x align-right">
-										<button class="prev cell-shrink">PREV</button>
-										<button class="next cell-shrink">NEXT</button>
+										<button class="prev no-style cell-shrink">
+											<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg"/>
+										</button>
+										<button class="next no-style cell-shrink">
+											<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg"/>
+										</button>
 									</div>
 								</div>  						    
 						    </div>
