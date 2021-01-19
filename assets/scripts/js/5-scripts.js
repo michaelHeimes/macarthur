@@ -276,6 +276,25 @@ jQuery( document ).ready(function($) {
 	
 	}
 	
+	if ($('body').hasClass('page-template-podcast-page')) {
+		
+		$('a#all-podcasts-label').addClass('initial');
+		
+		if ($('a#all-podcasts-label').hasClass('initial') ) {
+
+			$('a#all-podcasts-label').on('click', function(e) {
+				ajaxloadmore.reset();
+				$('a#all-podcasts-label').removeClass('initial');
+			});
+			
+			} else {
+			
+		}
+		
+
+		
+	}
+	
 // 	Mentorship Slider
 	if($('.testimonial-slider').length) {
 	

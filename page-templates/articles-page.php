@@ -78,7 +78,7 @@ get_header(); ?>
 				    <div id="cat-filter" class="filter-buttons-wrap grid-container fluid">
 					    <div class="btn-wrap grid-x grid-padding-x align-center">
 						    
-						   <div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="">All</button></div>
+						   <div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="">All</button></div>
 						   
 						   <?php 
 							$categories = get_categories(array(
@@ -107,7 +107,7 @@ get_header(); ?>
 							  ));
 							foreach ( $categories as $category ) :
 						  
-						   echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="15"  data-scroll="false" data-category="' . $category->slug . '">' . $category->name . '</button></div>';
+						   echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="' . $category->slug . '">' . $category->name . '</button></div>';
 						
 						  endforeach;?>
 					    </div>
@@ -122,7 +122,7 @@ get_header(); ?>
 						    	<?php 
 								$featured_post = get_field('featured_article', false, false);
 								$post__not_in = ($featured_post) ? implode(',', $featured_post) : '';
-								echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap filter-grid grid-x grid-margin-x grid-padding-x" post_type="post" order="DESC" transition_container="true" posts_per_page="9" cache="false" post__not_in="' . $post__not_in . '"]'); ?>
+								echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap filter-grid grid-x grid-margin-x grid-padding-x" post_type="post" order="DESC" transition_container="true" posts_per_page="9" cache="false" posts_per_page="9" paging="true" paging_show_at_most="9" paging_scroll="true:400" paging_controls="false" post__not_in="' . $post__not_in . '"]'); ?>
 								
 						    </div>
 						

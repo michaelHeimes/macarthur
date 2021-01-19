@@ -203,7 +203,8 @@ get_header(); ?>
 									    ?>
 -->
 									    
-					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap" post_type="podcast_post" taxonomy="podcast_name" taxonomy_terms="' . $cat . '" taxonomy_operator="IN" order="DESC" transition_container="true" posts_per_page="5" cache="false"]'); ?>
+					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap" post_type="podcast_post" taxonomy="podcast_name" taxonomy_terms="' . $cat . '" taxonomy_operator="IN" order="DESC" transition_container="true" posts_per_page="5" paging="true" paging_show_at_most="5" paging_scroll="true:400" paging_controls="false" cache="false"]'); ?>
+																	
 																	
 									
 									</div>
