@@ -2,6 +2,9 @@
 function site_scripts() {
   global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
+  	// Adding Barba CDN
+    wp_enqueue_script( 'barba-js', '//cdn.jsdelivr.net/npm/@barba/core', array( 'jquery' ), true );
+
   	// Adding GSAP CDN
     wp_enqueue_script( 'gsap-js', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array( 'jquery' ), true );
 

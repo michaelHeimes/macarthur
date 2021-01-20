@@ -408,7 +408,7 @@ $dropdownmenu-arrow-padding: 1.5rem;
 $dropdownmenu-min-width: 215px;
 $dropdownmenu-background: null;
 $dropdownmenu-submenu-background: $white;
-$dropdownmenu-padding: .8rem 1.4rem;
+$dropdownmenu-padding: .8rem 1.15rem;
 $dropdownmenu-nested-margin: 0;
 $dropdownmenu-submenu-padding: $dropdownmenu-padding;
 $dropdownmenu-border: 0px solid $medium-gray;
@@ -873,7 +873,7 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 30px,
+  small: 50px,
   medium: 40px
 );
 $grid-padding-gutters: $grid-margin-gutters;

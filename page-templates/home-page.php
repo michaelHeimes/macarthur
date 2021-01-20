@@ -460,7 +460,7 @@ get_header(); ?>
 												
 											</div>
 											
-											<div class="bg-wrap toggle-content-slider">
+											<div class="bg-wrap toggle-content-slider show-for-medium">
 												
 												<?php if( have_rows('imp_slide_1') ):?>
 													<?php while ( have_rows('imp_slide_1') ) : the_row();?>	
@@ -561,7 +561,7 @@ get_header(); ?>
 							<div class="inner">
 											
 								<?php if( have_rows('accordion_sections') ):?>
-									<div class="accordion last-active">
+									<div class="accordion">
 									<?php while ( have_rows('accordion_sections') ) : the_row();?>	
 									
 										<?php $num = get_row_index();?>

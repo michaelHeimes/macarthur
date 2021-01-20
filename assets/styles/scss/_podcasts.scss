@@ -58,6 +58,7 @@
 	.tabs-content {
 		padding: 0;
 		border: 0;
+		position: relative;
 	}
 	
 	
@@ -100,6 +101,16 @@
 	}
 
 	.about-podcasts {
+		
+		> .top {
+			position: relative;
+			border-bottom: $border;
+			
+			h2 {
+				margin-bottom: .84em;
+			}
+
+		}
 		
 		.copy-wrap {
 			.inner-padding {
@@ -144,24 +155,25 @@
 			img {
 				margin-right: 1.4em;
 			}
+			
+			.small-caps.underline:after {
+				transition: 0.35s ease;
+			}
+			
+		&:hover {
+			.small-caps.underline:after {
+				transform: translateY(4px);
+			}
+		}
 
 		}
 		
 	}
 	
-	.about-podcasts {
-		h2 {
-			margin-bottom: .84em;
-		}
-		
-		.recent-pods-wrap {
-			border-bottom: $border;
-		}
-		
-	}
 	
 	.podcast-player-wrap {
 		position: fixed;
+		z-index: 1;
 		left: 0;
 		right: 0;
 		bottom: 0;

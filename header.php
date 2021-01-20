@@ -24,8 +24,8 @@
 		<!-- If Site Icon isn't set in customizer -->
 		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
 			<!-- Icons & Favicons -->
-			<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
-			<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	
+			<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+<!-- 			<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	 -->
 	    <?php } ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
@@ -35,6 +35,8 @@
 	</head>
 			
 	<body <?php body_class(); ?>>
+		
+		<?php if( is_front_page() ):?>
 		
 		<div id="preloader" class="preloader" style="display: none;">
 			<div class="bg" style="background-image: url(<?php the_field('loader_background_image', 'options');?>)"></div>
@@ -49,13 +51,15 @@
 			<?php endif; ?>
 			
 		</div>
+		
+		<?php endif;?>
 
 		<div class="off-canvas-wrapper">
 			
 			<!-- Load off-canvas container. Feel free to remove if not using. -->			
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
 			
-			<div class="off-canvas-content" style="opacity: 0;" data-off-canvas-content>
+			<div class="off-canvas-content" <?php if( is_front_page() ):?>style="opacity: 0;"<?php endif;?> data-off-canvas-content>
 				
 				<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
 							

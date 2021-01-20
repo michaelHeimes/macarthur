@@ -1,55 +1,59 @@
 jQuery( document ).ready(function($) {
 	
 // 	Preloader
-	$(".preloader").fadeIn(300);
-  	
-	$(window).on("load", function() {
-		
-		var $preloaderImgWrap = $('.preloader .img-wrap');
-		var $preloaderImg = $('.preloader .img-wrap img');
-		var $preloaderLine = $('.preloader .vertical-line')
-		
-		var $wrapOffset = $('.preloader .img-wrap').offset();
-		var $imgWrapBottom = $wrapOffset.top;
-		var $imgHeight = $('.preloader .img-wrap img').height();
-		var $imgPosition = $imgWrapBottom + $imgHeight;
-		var $verticalLineHeight = $imgWrapBottom - 57;
-				
-		$preloaderLine.css('height', $verticalLineHeight);
-		
-		gsap.set($preloaderImg, {
-			y: $imgPosition
-		});
+	if ( $('body').hasClass('home') ){
 
-		gsap.set($preloaderLine, {
-			y: $imgPosition, opacity: 1
-		});
-		
-		$('.off-canvas-content').css('opacity', '1');
-		
-		gsap.to($preloaderImg, {
-			y: '0%', duration: 3, delay: 0, ease: 'expo.out'
-	  	});	
-
-		gsap.to($preloaderLine, {
-			y: '0%', duration: 3, delay: 0, ease: 'expo.out'
-	  	});	
-
-		$(".preloader").addClass('loaded');	
-
-	  	setTimeout(function(){ 
+		$(".preloader").fadeIn(300);
+	  	
+		$(window).on("load", function() {
+			
+			var $preloaderImgWrap = $('.preloader .img-wrap');
+			var $preloaderImg = $('.preloader .img-wrap img');
+			var $preloaderLine = $('.preloader .vertical-line')
+			
+			var $wrapOffset = $('.preloader .img-wrap').offset();
+			var $imgWrapBottom = $wrapOffset.top;
+			var $imgHeight = $('.preloader .img-wrap img').height();
+			var $imgPosition = $imgWrapBottom + $imgHeight;
+			var $verticalLineHeight = $imgWrapBottom - 57;
+					
+			$preloaderLine.css('height', $verticalLineHeight);
+			
+			gsap.set($preloaderImg, {
+				y: $imgPosition
+			});
+	
+			gsap.set($preloaderLine, {
+				y: $imgPosition, opacity: 1
+			});
+			
+			$('.off-canvas-content').css('opacity', '1');
+			
+			gsap.to($preloaderImg, {
+				y: '0%', duration: 3, delay: 0, ease: 'expo.out'
+		  	});	
+	
+			gsap.to($preloaderLine, {
+				y: '0%', duration: 3, delay: 0, ease: 'expo.out'
+		  	});	
+	
 			$(".preloader").addClass('loaded');	
-		}, 2000);
-
-	  	setTimeout(function(){ 
-		  	
-			$("body").css('overflow', 'visible');	
+	
+		  	setTimeout(function(){ 
+				$(".preloader").addClass('loaded');	
+			}, 2000);
+	
+		  	setTimeout(function(){ 
+			  	
+				$("body").css('overflow', 'visible');	
+				
+				$(".preloader").fadeOut(700);
+				
+			}, 3500);
 			
-			$(".preloader").fadeOut(700);
-			
-		}, 3500);
+		});
 		
-	});
+	}
 
 	
 // 	Desktop Menu
@@ -190,9 +194,9 @@ jQuery( document ).ready(function($) {
 	}
 	
 // 	Home Page Accordion
-	if($('.home-accordion .accordion.last-active').length) {
+	if($('.home-accordion .accordion').length) {
 		
-		$('.home-accordion  .accordion-item').last().addClass('open');
+		$('.home-accordion  .accordion-item').first().addClass('open');
 		
 		$(document).on('click', '.home-accordion a', function(e) {
 			e.preventDefault();

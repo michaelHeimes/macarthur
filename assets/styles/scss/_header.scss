@@ -7,7 +7,12 @@ header.header {
 	.dropdown.menu>li.is-dropdown-submenu-parent>a:after {
 		border: 0;
 	    margin-top: -8px;
-		content: url(/wp-content/themes/macarthur/assets/images/arrow-nav.svg);
+		content: url(/wp-content/themes/macarthur/assets/images/mobile-arrow.svg);
+		
+		@include breakpoint(large) {
+			content: url(/wp-content/themes/macarthur/assets/images/arrow-nav.svg);
+		}
+		
 	}
 	
 	.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle)>a:after {
@@ -21,9 +26,13 @@ header.header {
 	.top-bar {
 		max-width: 1530px;
 		margin: auto;
-		min-height: 117px;
+		min-height: 70px;
 		padding-top: 0;
 		padding-bottom: 0;
+		
+		@include breakpoint(medium) {
+			min-height: 117px;	
+		}
 		
 		.top-bar-left,
 		.top-bar-right {
@@ -46,14 +55,14 @@ header.header {
 						
 					&.pinned-logo {
 						opacity: 0;
-						transition: opacity .25s ease, top 0s linear;
+						transition: opacity .5s ease, top 0s linear;
 					}
 				
 					&.load-logo {
 						opacity: 1;
 						position: absolute;
 						top: -20px;
-						transition: opacity .25s ease;
+						transition: opacity .5s ease;
 						
 						@include breakpoint(medium) {
 							top: -33px;
@@ -140,8 +149,10 @@ header.header {
 				a {
 					font-size: rem-calc(13);
 					font-family: $font-helvetica;
+					letter-spacing: 1.95px;
+					line-height: 1;
 					text-transform: uppercase;
-					transition: all .25s ease;
+					transition: all .25s ease;					
 				}
 				
 				&:hover {
@@ -170,12 +181,17 @@ header.header {
 			position: fixed;
 			z-index: 2;
 			display: none;
-			top: 118px;
 			bottom: 0;
 			left: 0;
 			right: 0;
 			width: 100%;
-			height: calc(100vh - 114px);
+			top: 71px;
+			height: calc(100vh - 70px);
+			
+			@include breakpoint(medium) {
+				top: 118px;
+				height: calc(100vh - 114px);				
+			}
 			
 			ul#main-nav.accordion-menu {
 				position: relative;
@@ -282,7 +298,7 @@ header.header {
 		&.load-logo {
 			opacity: 0;
 			top: -100px;
-			transition: opacity .25s ease, top 0s linear .26s;
+			transition: opacity .5s ease, top 0s linear .26s;
 		}
 		
 	}

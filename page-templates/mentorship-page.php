@@ -98,13 +98,16 @@ get_header(); ?>
 									<?php endif;?>
 									
 									<div class="slider-nav grid-x grid-padding-x align-right">
-										<button class="prev no-style cell-shrink">
-											<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg"/>
-										</button>
-										<button class="next no-style cell-shrink">
-											<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg"/>
-										</button>
+										<div class="buttons-wrap cell">
+											<button class="prev no-style cell-shrink">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg"/>
+											</button>
+											<button class="next no-style cell-shrink">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg"/>
+											</button>
+										</div>
 									</div>
+									
 								</div>  						    
 						    </div>
 					    </div>
@@ -119,7 +122,7 @@ get_header(); ?>
 					    					    
 					    <div class="grid-x grid-padding-x">					    
 						    <div class="cell small-12">
-								<div class="inner-padding">
+								<div class="inner-padding form-section">
 									<div class="grid-x grid-padding-x">	
 										
 										<div class="left cell small-12 medium-6 large-5">

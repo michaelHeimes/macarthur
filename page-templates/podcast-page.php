@@ -68,86 +68,92 @@ get_header(); ?>
 				
 			    </section>	
 
-				<div  class="tabs-content" data-tabs-content="podcast-tabs">
+				<div class="tabs-content" data-tabs-content="podcast-tabs">
 			    
 				    <section id="about-podcasts" class="about-podcasts tabs-panel is-active" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
-					    <div class="grid-container fluid offset-content left-line">
-						    <div class="grid-x grid-padding-x">					    
-							    <div class="cell small-12 recent-pods-wrap">
-								    <div class="inner-padding">
-										<h2>Latest Episodes</h2>
-										
-										<div class="box-wrap sm grid-x grid-padding-x">
-										
-											<?php 			
-												
-											$cat_term = get_field('podcast_name');   
+					    
+					    <div class="top">
+					    
+						    <div class="grid-container fluid offset-content left-line">
+							    <div class="grid-x grid-padding-x">					    
+								    <div class="cell small-12 recent-pods-wrap">
+									    <div class="inner-padding">
+											<h2>Latest Episodes</h2>
 											
-											$cat = $cat_term->slug;
-																								
-										    $args = array(  
-										        'post_type' => 'podcast_post',
-										        'post_status' => 'publish',
-										        'posts_per_page' => 3, 
-										        'order' => 'ASC',
-										        'cat' => $cat,
-										    );
-										
-										    $loop = new WP_Query( $args ); 
-										        
-										    while ( $loop->have_posts() ) : $loop->the_post();?>
-										    
-											<article class="single-podcast box sm cell small-12 medium-6 tablet-4">
+											<div class="box-wrap sm grid-x grid-padding-x">
+											
+												<?php 			
+													
+												$cat_term = get_field('podcast_name');   
 												
-												<div class="inner" data-equalizer-watch>
-													
-													<div class="top">
+												$cat = $cat_term->slug;
+																									
+											    $args = array(  
+											        'post_type' => 'podcast_post',
+											        'post_status' => 'publish',
+											        'posts_per_page' => 3, 
+											        'order' => 'ASC',
+											        'cat' => $cat,
+											    );
+											
+											    $loop = new WP_Query( $args ); 
+											        
+											    while ( $loop->have_posts() ) : $loop->the_post();?>
 											    
-														<div class="date small-caps">
-															<?php 
-															$format_in = 'd/m/Y'; // the format your value is saved in (set in the field options)
-															$format_out = 'M, d Y'; // the format you want to end up with
-															
-															$date = DateTime::createFromFormat($format_in, get_field('date'));
-															
-															echo $date->format( $format_out );
-																
-															?>
-														</div>	
+												<article class="single-podcast box sm cell small-12 medium-6 tablet-4">
 													
-														<h3>
-															<?php the_title();?>
-														</h3>
+													<div class="inner" data-equalizer-watch>
 														
-														<div class="excerpt-wrap">
-															<?php the_field('description');?>
+														<div class="top">
+												    
+															<div class="date small-caps">
+																<?php 
+																$format_in = 'd/m/Y'; // the format your value is saved in (set in the field options)
+																$format_out = 'M, d Y'; // the format you want to end up with
+																
+																$date = DateTime::createFromFormat($format_in, get_field('date'));
+																
+																echo $date->format( $format_out );
+																	
+																?>
+															</div>	
+														
+															<h3>
+																<?php the_title();?>
+															</h3>
+															
+															<div class="excerpt-wrap">
+																<?php the_field('description');?>
+															</div>
+														
 														</div>
+																
+														<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span class="small-caps underline">Listen Now</span></button>
+														
+														<div class="bottom-line"></div>
 													
 													</div>
-															
-													<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span class="small-caps underline">Listen Now</span></button>
-													
-													<div class="bottom-line"></div>
 												
-												</div>
+												</article>
 											
-											</article>
-										
-											<?php
-										    endwhile;
-										
-										    wp_reset_postdata(); 
-										    
-										    ?>
-										</div>
-										
-										<div class="bottom-line"></div>
-										
+												<?php
+											    endwhile;
+											
+											    wp_reset_postdata(); 
+											    
+											    ?>
+											</div>
+																					
+									    </div>
 								    </div>
+								    
 							    </div>
-							    
+							    						    
 						    </div>
-					    </div>
+						    
+						    <div class="bottom-line"></div>
+						
+						</div>
 					    
 					    <div class="copy-wrap">
 					    	<div class="grid-container fluid offset-content">
@@ -211,6 +217,9 @@ get_header(); ?>
 								</div>
 						    </div>
 					    </div>
+					    
+					    <div class="bottom-line"></div>
+					    
 				    </section>
 				    
 				</div>
@@ -221,10 +230,4 @@ get_header(); ?>
 
 	</div> <!-- end #content -->
 	
-	<div class="podcast-player-wrap" style="display: none;">
-	
-		<iframe data-target="persistent-player.spotifyEmbed" src="" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media" style="height: 152px;"></iframe>	
-		
-	</div>
-
 <?php get_footer(); ?>

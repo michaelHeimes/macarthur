@@ -4,9 +4,13 @@
 		padding-bottom: 7.45em;
 		
 		h1 {
-			max-width: 540px;
-			margin-left: -19%;	
+			max-width: 540px;	
 			margin-bottom: .377em;
+			
+			@include breakpoint(medium) {
+				margin-left: -19%;
+			}
+			
 		}
 		
 		.right {
@@ -73,12 +77,19 @@
 					button {
 						width: 206px;
 						height: 100%;
+						line-height: 1.36;
 					}
 	
 				}
 			
 			}
 
+		}
+		
+		.article-card {
+			.top {
+				padding-bottom: 2.2em;				
+			}
 		}
 		
 	}

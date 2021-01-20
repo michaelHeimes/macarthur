@@ -54,7 +54,7 @@ get_header(); ?>
 					    					    
 					    <div class="grid-x grid-padding-x">					    
 						    <div class="cell small-12">
-								<div class="inner-padding">
+								<div class="inner-padding form-section">
 									<div class="grid-x grid-padding-x">	
 										
 										<div class="left cell small-12 medium-6 large-5">

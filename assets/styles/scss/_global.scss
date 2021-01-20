@@ -27,8 +27,11 @@ h3,
 /*********************
 COMMON ELEMENT STYLES
 *********************/
+*:focus {
+	outline: 0;
+}
 // Preloader
-body {
+body.home {
 	overflow: hidden;
 	transition: opacity 0s ease;
 }
@@ -219,12 +222,21 @@ body {
 	}
 	
 	.heading-wrap {
-		padding-top: 7em;
+		padding-top: 3.5em;
 		padding-bottom: 2.45em;
+		
+		@include breakpoint(medium) {
+			padding-top: 7em;
+		}
+		
 	}
 	
 	.columns-wrap {
-		padding-bottom: 4.2em;
+		padding-bottom: .5em;
+		
+		@include breakpoint(medium) {
+			padding-bottom: 4.2em;
+		}
 		
 		.single-column {
 			margin-bottom: 3rem;
@@ -263,15 +275,7 @@ body {
 	}
 
 	@include breakpoint(large) {
-		margin-left: 8%;
-	}
-
-	@include breakpoint(xlarge) {
-		margin-left: 11%;
-	}
-
-	@include breakpoint(xxlarge) {
-		margin-left: 17.8%;
+		margin-left: 115px;
 	}
 	
 	@include breakpoint(medium) { 
@@ -284,7 +288,7 @@ body {
 				position: absolute;
 				z-index: 1;
 				left: 0;
-				top: -7px;
+				top: -9px;
 				bottom: 0;
 				border-left: $border;
 			}
@@ -300,13 +304,17 @@ body {
 				padding-right: 6.25em;
 			}
 			
+		&.form-section {
+			padding-left: 3.75em;
+		}
+			
 		}
 	
 	}
 	
 &:last-child {
 	&.left-line:before{
-		bottom: 7px;
+		bottom: 0;
 	}
 }
 	
@@ -365,6 +373,7 @@ body {
 		}
 		
 		.date-tag {
+			line-height: 1.36;
 			padding-bottom: 1.3em;
 		}
 		
@@ -452,6 +461,12 @@ a.arrow-link {
 
 // Forms
 .gform_wrapper {
+	
+	li.gfield.gfield_error, .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+		background-color: transparent !important;
+		border: 0;
+	}
+	
 	form {
 		.gform_body {
 			.gform_fields {
@@ -522,8 +537,12 @@ button:not(.no-style),
 .button:not(.no-style) {
 	cursor: pointer;
 	border: $border;
-	padding: 3em 2.91em;
+	padding: 2.137em 1.5em;
 	position: relative;
+	
+	@include breakpoint(medium) {
+		padding: 3em 2.91em;
+	}
 	
 &:before,
 &:after {

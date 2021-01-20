@@ -30,7 +30,12 @@
 		}
 		
 		.inner-padding {
-			margin-top: 6.95em;
+			margin-top: 3.475em;
+			
+			@include breakpoint(medium) {
+				margin-top: 6.95em;
+			}
+			
 		}
 		
 		.testimonial-slider {
@@ -56,13 +61,21 @@
 			padding-top: 2em;
 			padding-bottom: 4.5em;	
 			
-			button {
-				height: 2em;
-				
-			&:nth-child(2) {
-				margin-left: 3.1em;
-			}
-			    
+			.buttons-wrap {
+			
+				@include breakpoint(medium) {
+					text-align: right;
+				}
+			
+				button {
+					height: 2em;
+					
+				&:nth-child(2) {
+					margin-left: 3.1em;
+				}
+				    
+				}
+			
 			}
 			
 		}

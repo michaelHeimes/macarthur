@@ -1,3 +1,4 @@
+.single-post,
 .page-template-default {
 	
 	.banner {
@@ -37,6 +38,11 @@
 		ul,
 		ol {
 			font-size: rem-calc(20);
+		}
+		
+		.flex-video.widescreen, .responsive-embed.widescreen {
+		    margin-top: 2.95em;
+		    margin-bottom: 3.85em;
 		}
 		
 		blockquote,
