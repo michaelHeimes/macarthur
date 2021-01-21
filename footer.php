@@ -7,7 +7,7 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
-					
+		</div>			
 				<footer class="footer" role="contentinfo">
 					
 					<div class="grid-container fluid">

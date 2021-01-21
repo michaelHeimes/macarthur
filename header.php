@@ -34,7 +34,7 @@
 
 	</head>
 			
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> data-barba="wrapper">
 		
 		<?php if( is_front_page() ):?>
 		
@@ -68,3 +68,5 @@
 					 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 	 	
 				</header> <!-- end .header -->
+				
+				<div data-barba="container" class="barba-container" data-barba-namespace="<?php the_title();?>">
