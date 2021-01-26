@@ -18,13 +18,16 @@ get_header(); ?>
 				    <div class="columns-banner grid-container fluid offset-content">
 				    
 					    <div class="heading-wrap grid-x grid-padding-x">
-					
-							<h1 class="cell small-12"><?php the_field('ph_heading');?></h1>
-						
+							<div class="cell small-12">
+								<div class="inner">
+									<h1><?php the_field('ph_heading');?></h1>
+								</div>
+							</div>
 					    </div>
 							
 						<?php if( have_rows('ph_icon_and_info_columns') ):?>
-						<div class="columns-wrap grid-x grid-padding-x">
+						<div class="columns-wrap">
+							<div class="grid-x grid-padding-x">
 							<?php while ( have_rows('ph_icon_and_info_columns') ) : the_row();?>	
 							
 							<?php if( have_rows('single_column') ):?>
@@ -56,6 +59,7 @@ get_header(); ?>
 							<?php endif;?>
 						
 							<?php endwhile;?>
+							</div>
 						</div>
 						<?php endif;?>
 						

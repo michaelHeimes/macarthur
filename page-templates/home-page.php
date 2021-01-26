@@ -57,7 +57,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 				
@@ -69,7 +69,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 														
@@ -106,7 +106,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 				
@@ -118,7 +118,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 														
@@ -155,7 +155,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 				
@@ -167,7 +167,7 @@ get_header(); ?>
 														    $link_target = $link['target'] ? $link['target'] : '_self';
 														    ?>
 														<div>
-															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+															<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 														</div>
 														<?php endif; ?>
 														
@@ -211,7 +211,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -221,7 +221,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 										
 									</div>
@@ -252,7 +252,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -262,7 +262,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 										
 									</div>
@@ -293,7 +293,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 
 										<?php 
@@ -303,7 +303,7 @@ get_header(); ?>
 										    $link_title = $link['title'];
 										    $link_target = $link['target'] ? $link['target'] : '_self';
 										    ?>
-											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+											<a class="arrow-link small-caps" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><span class="small-caps underline"><?php echo esc_html( $link_title ); ?></span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 										<?php endif; ?>
 										
 									</div>
@@ -336,7 +336,7 @@ get_header(); ?>
 													<div class="toggle-nav-wrap hide-for-medium">
 														
 														<?php if( have_rows('imp_slide_1') ):?>
-														<button class="toggle-nav-1 active third no-style" data-slide="1">
+														<button class="toggle-nav-1 active third no-style" data-slide="1" aria-label="Show Slide One">
 															<?php while ( have_rows('imp_slide_1') ) : the_row();?>																		
 															<?php the_sub_field('button_label');?>
 															
@@ -351,7 +351,7 @@ get_header(); ?>
 														<span class="second"></span>
 				
 														<?php if( have_rows('imp_slide_2') ):?>
-														<button class="toggle-nav-2 third no-style" data-slide="2">
+														<button class="toggle-nav-2 third no-style" data-slide="2" aria-label="Show Slide Two">
 															<?php while ( have_rows('imp_slide_2') ) : the_row();?>																		
 															<?php the_sub_field('button_label');?>
 															

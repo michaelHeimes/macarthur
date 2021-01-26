@@ -27,9 +27,11 @@ h3,
 /*********************
 COMMON ELEMENT STYLES
 *********************/
+/*
 *:focus {
 	outline: 0;
 }
+*/
 // Preloader
 body.home {
 	overflow: hidden;
@@ -102,6 +104,30 @@ body.home {
 		filter: grayscale(0);
 	}
 }
+	
+}
+
+// Podcast Player
+.podcast-player-wrap {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	transform: translateY(160px);
+	transition: transform .5s ease;
+	
+&.show {
+	transform: translateY(0px);
+}
+
+	button {
+		cursor: pointer;
+		background: $primary-color;
+	    margin-right: 1em;
+	    line-height: 1;
+	    padding: 1em 1em .7em;
+	}
 	
 }
 
@@ -211,15 +237,14 @@ body.home {
 }
 
 // Banners with heading and three columns
-.columns-banner {	
-	.heading-wrap,
+.columns-banner.grid-container {
+	max-width: none;
+	
+	.heading-wrap .inner,
 	.columns-wrap {
-		
-		@include breakpoint(tablet) {
-			padding-left: 3.3em;
-		}
-		
-	}
+		max-width: 1112px;
+		margin: auto !important;
+	}	
 	
 	.heading-wrap {
 		padding-top: 3.5em;
@@ -241,7 +266,7 @@ body.home {
 		.single-column {
 			margin-bottom: 3rem;
 			.inner {
-				max-width: 265px;
+				max-width: 280px;
 				
 				.icon-wrap {
 					padding-bottom: 1.9em;
@@ -268,7 +293,8 @@ body.home {
 // Style of offset content with our without left line
 .grid-container.fluid.offset-content {
 	max-width: 91.8125em;
-	margin: auto;
+	margin-left: auto;
+    margin-right: auto;
 	
 	@include breakpoint(medium) {
 		margin-left: 5%;
@@ -467,6 +493,16 @@ a.arrow-link {
 		border: 0;
 	}
 	
+	li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+	li.gfield_error textarea,
+	.validation_message,
+	li.gfield_error div.ginput_complex.ginput_container label,
+	.gfield_error .gfield_label,
+	div.validation_error {
+		color: $white !important;
+		border-color: $white !important;
+	}
+	
 	form {
 		.gform_body {
 			.gform_fields {
@@ -475,9 +511,11 @@ a.arrow-link {
 			    margin-top: .2em !important;
 			}
 				
+/*
 				span.gfield_required {
 					opacity: 0;
 				}
+*/
 				
 				input,
 				.gfield_select {

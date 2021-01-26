@@ -78,7 +78,7 @@ get_header(); ?>
 				    <div id="cat-filter" class="filter-buttons-wrap grid-container fluid">
 					    <div class="btn-wrap grid-x grid-padding-x align-center">
 						    
-						   <div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="">All</button></div>
+						   <div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="" aria-label="Show All Articles">All</button></div>
 						   
 						   <?php 
 							$categories = get_categories(array(
@@ -107,7 +107,7 @@ get_header(); ?>
 							  ));
 							foreach ( $categories as $category ) :
 						  
-						   echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="' . $category->slug . '">' . $category->name . '</button></div>';
+						   echo '<div class="cell shrink"><button class="button" data-repeater="default" data-posts-per-page="9"  data-scroll="false" data-category="' . $category->slug . '" aria-label="Show ' . $category->name . ' Articles">' . $category->name . '</button></div>';
 						
 						  endforeach;?>
 					    </div>

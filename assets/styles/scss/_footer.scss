@@ -30,6 +30,10 @@ footer.footer {
 		line-height: 1.40;
 		padding-bottom: 2em;
 		
+		@media screen and (max-width: 414px) {
+			padding-left: 0;
+		}
+		
 		@include breakpoint(medium) {
 			text-align: right;
 			padding-top: 0;

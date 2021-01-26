@@ -14,8 +14,10 @@ get_header(); ?>
 			    <section class="banner">
 				    <div class="grid-container fluid offset-content">
 					    <div class="inner-padding grid-x grid-padding-x">	
-					
-							<h1 class="cell small-12"><?php the_title();?></h1>	
+							
+							<div class="cell small-12">
+								<h1><?php the_title();?></h1>	
+							</div>
 							
 							<div class="small-caps cell small-12">
 								<?php $categories = get_the_category();
@@ -87,7 +89,7 @@ get_header(); ?>
 									
 								<div class="link-wrap">
 									
-									<a class="arrow-link small-caps" href="<?php echo esc_url( $permalink ); ?>"><span class="small-caps underline">Read More</span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+									<a class="arrow-link small-caps" href="<?php echo esc_url( $permalink ); ?>"><span class="small-caps underline">Read More</span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 
 								</div>
 								

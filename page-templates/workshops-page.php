@@ -18,9 +18,9 @@ get_header(); ?>
 				    <div class="grid-container fluid offset-content">
 				    
 					    <div class="heading-wrap grid-x grid-padding-x">
-					
-							<h1 class="cell small-12"><?php the_field('heading');?></h1>
-						
+							<div class="cell small-12">
+								<h1><?php the_field('heading');?></h1>
+							</div>
 					    </div>
 													
 				    </div>
@@ -44,11 +44,13 @@ get_header(); ?>
 										</div>
 										
 										<div class="img-wrap cell small-12 medium-6 tablet-5">
+											<div class="inner">
 											<?php 
 											$image = get_sub_field('image');
 											if( !empty( $image ) ): ?>
 											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 											<?php endif; ?>
+											</div>
 										</div>
 										
 										<div class="cell small-12 medium-6 tablet-7">

@@ -55,8 +55,8 @@ get_header(); ?>
 								
 								<div class="content-toggle-buttons-wrap tabs" data-tabs id="podcast-tabs">
 																		
-									<button id="about" class="no-style tabs-title is-active"><a href="#about-podcasts">About</a></button>
-									<button id="episodes" class="no-style tabs-title"><a href="#all-podcasts">Episodes</a></button>
+									<button id="about" class="no-style tabs-title is-active" aria-label="Show About Content"><a href="#about-podcasts">About</a></button>
+									<button id="episodes" class="no-style tabs-title" aria-label="Show All Podcasts"><a href="#all-podcasts">Episodes</a></button>
 																		
 								</div>
 							
@@ -128,7 +128,7 @@ get_header(); ?>
 														
 														</div>
 																
-														<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span class="small-caps underline">Listen Now</span></button>
+														<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg" alt="play button"/><span class="small-caps underline">Listen Now</span></button>
 														
 														<div class="bottom-line"></div>
 													

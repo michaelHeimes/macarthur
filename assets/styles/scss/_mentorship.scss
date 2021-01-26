@@ -70,8 +70,28 @@
 				button {
 					height: 2em;
 					
+					img {
+						transition: transform 0.3s ease;
+					}
+					
 				&:nth-child(2) {
 					margin-left: 3.1em;
+				}
+				
+				&:hover {
+					cursor: pointer;
+				}
+				
+				&.prev:hover {
+					img {
+						transform: translateX(-10px);
+					}
+				}
+
+				&.next:hover {
+					img {
+						transform: translateX(10px);
+					}
 				}
 				    
 				}

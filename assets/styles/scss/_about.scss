@@ -21,6 +21,7 @@
 				letter-spacing: 0;
 				line-height: 1;
 				padding-bottom: 2.2em;	
+				max-width: 457px;
 			}
 
 		&.layout-image-left {
@@ -42,7 +43,8 @@
 			.bottom {
 				
 				@include breakpoint (large) {
-					padding-left: 9.3rem;				
+					position: relative;
+					left: 9.3rem;			
 				}
 			}
 			

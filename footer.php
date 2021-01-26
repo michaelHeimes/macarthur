@@ -7,7 +7,9 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
-		</div>			
+		</div>	
+		
+		</div>		
 				<footer class="footer" role="contentinfo">
 					
 					<div class="grid-container fluid">
@@ -49,8 +51,8 @@
 									</div>
 									
 									<nav class="social-wrap cell shrink medium-12">
-										<div><a href="<?php the_field('facebook_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icon.svg"/></a></div>
-										<div><a href="<?php the_field('youtube_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube-icon.svg"/></a></div>
+										<div><a href="<?php the_field('facebook_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icon.svg" alt="facebook-icon"/></a></div>
+										<div><a href="<?php the_field('youtube_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube-icon.svg" alt="youtube-icon"/></a></div>
 									</nav>
 									
 								</div>
@@ -74,6 +76,10 @@
 		</div> <!-- end .off-canvas-wrapper -->
 		
 		<div class="podcast-player-wrap" style="display: none;">
+			
+			<div class="btn-wrap text-right">
+				<button type="button" class="no-style small-caps">Close</button>
+			</div>
 		
 			<iframe data-target="persistent-player.spotifyEmbed" src="" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media" style="height: 152px;"></iframe>	
 			

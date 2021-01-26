@@ -1,12 +1,61 @@
 jQuery( document ).ready(function($) {
 	
+	'use strict';
+	
 	var _app = window._app || {};
 	
 	var Munchkin; // fix for gravity forms marketo extension.
 	
 	var ajaxurl = "/wp-admin/admin-ajax.php";
 	
+	_app.emptyParentLinks = function() {
+			
+		$('a[href="#"]').click(function(e) {
+		    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+		});	
+		
+	};
+	
 
+	_app.smoothState = function() {
+	   var options = {
+	            prefetch: true,
+	            cacheLength: 2,
+	            blacklist: ".blacklist",
+	            onStart: {
+	                duration: 1000, // Duration of our animation 2500
+	                render: function($container) {
+	                    // Add your CSS animation reversing class
+
+	                    // Restart your animation
+	                    smoothState.restartCSSAnimations();
+	                }
+	            },
+	            onReady: {
+	                duration: 0,
+	                render: function($container, $newContent) {
+		                		                
+	                    // Remove your CSS animation reversing class
+
+	                    // Inject the new content
+	                    $container.html($newContent);
+	                }  
+	             
+	            },
+	            onAfter: function() { //Call Back Functions after page load
+	                
+	                console.log("done");
+	                $(document).foundation();
+		   			$(function() {
+						_app.init();
+					});	                
+	            
+	            }
+	        },
+		smoothState = $('#smoothstate-container').smoothState(options).data('smoothState');
+		
+	}
+	
 	_app.barba = function() {
 		
 	// progress animation for mobile devices
@@ -59,7 +108,7 @@ jQuery( document ).ready(function($) {
 			}
 
 			// add classes here for a css transition
-			$('body').addClass('barba-transition');
+			$('#body').addClass('barba-transition');
 
 			// start progress animation when barba link is clicked
 			if (Modernizr.touch || $(window).width() <= 1024) {
@@ -143,14 +192,14 @@ jQuery( document ).ready(function($) {
 
 
 			// remove classes here for a css transition
-			$('body').removeClass('barba-transition');
+			$('#body').removeClass('barba-transition');
 
 			// copy over body classes
 /*
 			var classes = $('#body').data('classes');
 			console.log(classes);
 			if (classes != undefined && classes.length >= 4) {
-				$('body').attr('class', classes);
+				$('#body').attr('class', classes);
 			}
 */
 
@@ -292,7 +341,7 @@ jQuery( document ).ready(function($) {
 	
 	// 	Preloader
 	_app.preloader = function() {
-		if ( $('body').hasClass('home') ){
+		if ( $('#body').hasClass('home') ){
 	
 			$(".preloader").fadeIn(300);
 		  	
@@ -370,14 +419,16 @@ jQuery( document ).ready(function($) {
 		
 	_app.hero_drawers = function() {
 		// 	Home Page Banner Nav Drawers
-		if ( $('nav#bh-drawer-nav').length ) {
+		if ($('#body').hasClass('home')) {
 			
 			var maxWidth = 0;
 			var widestSpan = null;
 			var $element;
 			
-			$("nav#bh-drawer-nav .tab").each(function(){
+			$("nav#bh-drawer-nav .tab").each(function(i){
 				$element = $(this);
+				
+				console.log($element);
 				
 				if($element.width() > maxWidth){
 					maxWidth = $element.width();
@@ -391,7 +442,7 @@ jQuery( document ).ready(function($) {
 			});
 			
 			
-			$('nav#bh-drawer-nav .drawer').each(function( i ) {
+			$('nav#bh-drawer-nav .drawer').each(function(i) {
 	
 				var $this = $(this);
 				var $tab = $this.find('.tab');
@@ -401,26 +452,6 @@ jQuery( document ).ready(function($) {
 				
 				var $drawerContent = $this.find('.content');
 				var $drawerContentWidth = $($drawerContent).outerWidth();
-				
-				
-	// 			$this.css("transform", "translate(" + $drawerContentWidth + "px)", "0px");
-							
-	/*
-				$this.on('click', $tab, function() {
-					
-					if ( $this.hasClass('clicked') ) {
-						$this.css('transform','translate(0px,0px)');
-						$this.removeClass('clicked');
-	
-					} else {
-						
-						$this.css("transform", "translate(" + -$drawerContentWidth + "px)", "0px");
-						$this.addClass('clicked');
-						
-					}
-					
-				});
-	*/
 					
 				$this.hover(
 				
@@ -444,7 +475,7 @@ jQuery( document ).ready(function($) {
 	
 	_app.improvement_slider = function() {
 	// 	Home Page Improvement Slider
-		if ($('body').hasClass('home')) {
+		if ($('#body').hasClass('home')) {
 			
 			$(window).on("load resize", function() {
 				var $button1Width = $('button.line-offset-const').width();
@@ -519,7 +550,7 @@ jQuery( document ).ready(function($) {
 	
 	_app.articles_filter = function() {
 		// 	Articles Filter
-		if ($('body').hasClass('page-template-articles-page')) {
+// 		if ($('#body').hasClass('page-template-articles-page')) {
 	
 			// Set initial active item	
 			document.querySelector('#cat-filter button:first-child').classList.add('active'); // Set initial active state
@@ -561,7 +592,7 @@ jQuery( document ).ready(function($) {
 			   alm_is_animating = false; // Clear animation flag
 			};
 	
-		}
+// 		}
 	}
 
 	_app.podcast_player = function() {
@@ -569,6 +600,8 @@ jQuery( document ).ready(function($) {
 			
 			var $player = $('.podcast-player-wrap');
 			var $playerURL = "https://open.spotify.com/embed/episode/";
+			var $close = $('.podcast-player-wrap button');
+			
 	
 			$( 'article.single-podcast button' ).each(function( index ) {
 			
@@ -582,12 +615,17 @@ jQuery( document ).ready(function($) {
 					$player.addClass('show').fadeIn(300);
 				});			
 			})
+			
+			$close.click(function(e) {
+				e.preventDefault();
+				$player.addClass('show').fadeOut(300);
+			});
 		
 		}
 	}
 	
 	_app.podcast_page_toggle = function() {
-		if ($('body').hasClass('page-template-podcast-page')) {
+		if ($('#body').hasClass('page-template-podcast-page')) {
 						
 			$('a#all-podcasts-label').addClass('initial');
 			
@@ -633,19 +671,12 @@ jQuery( document ).ready(function($) {
 	
 		}
 	}
-	
-	
-	
-	
-	
 		
 	_app.init = function() {
 // 		is_barba = typeof is_barba !== 'undefined' ? is_barba : false;
-	
+		_app.emptyParentLinks();
 		_app.preloader();
-// 		_app.barba();
 		_app.ajaxloadmore();
-		_app.desktop_menu();
 		_app.desktop_menu();
 		_app.mobile_menu();
 		_app.hero_drawers();
@@ -654,6 +685,8 @@ jQuery( document ).ready(function($) {
 		_app.podcast_player();
 		_app.podcast_page_toggle();
 		_app.mentorship_slider();
+// 		_app.smoothState();
+// 		_app.barba();
 	}
 
 
@@ -661,9 +694,5 @@ jQuery( document ).ready(function($) {
 	$(function() {
 		_app.init();
 	});
-	
-	
-	
-	
 
 });

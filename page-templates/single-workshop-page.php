@@ -18,8 +18,9 @@ get_header(); ?>
 				    <div class="grid-container fluid offset-content">
 				    
 					    <div class="heading-wrap grid-x grid-padding-x">
-					
-							<h1 class="cell small-12"><?php the_title();?></h1>
+							<div class="cell small-12">
+								<h1><?php the_title();?></h1>
+							</div>
 							
 							<div class="cell small-12 info-wrap small-caps">
 								<div>Date: <?php the_field('date');?></div>

@@ -23,7 +23,7 @@
 				
 			</div>
 			
-			<a class="arrow-link small-caps" href="<?php echo get_permalink(); ?>"><span class="small-caps underline">Read More</span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg"/></a>
+			<a class="arrow-link small-caps" href="<?php echo get_permalink(); ?>"><span class="small-caps underline">Read More</span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/CTA-Arrow.svg" alt="right arrow"/></a>
 			
 			<div class="bottom-line"></div>
 	
@@ -60,7 +60,7 @@
 				<?php the_field('description');?>
 			</div>
 					
-			<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span class="small-caps underline">Listen Now</span></button>
+			<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg" alt="play button"/><span class="small-caps underline">Listen Now</span></button>
 		
 		<div class="bottom-line"></div>	
 			

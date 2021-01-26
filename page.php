@@ -16,8 +16,10 @@ get_header(); ?>
 			    <section class="banner">
 				    <div class="grid-container fluid offset-content">
 					    <div class="inner-padding grid-x grid-padding-x">	
-					
-							<h1 class="cell small-12"><?php the_field('heading');?></h1>	
+							
+							<div class="cell small-12">
+								<h1><?php the_field('heading');?></h1>	
+							</div>
 							
 							<?php if ( $subheading = get_field('sub_heading') ):?>
 							<h2><?php echo $subheading;?></h2>	

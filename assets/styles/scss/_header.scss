@@ -54,7 +54,9 @@ header.header {
 					a {
 						
 					&.pinned-logo {
+						position: relative;
 						opacity: 0;
+						z-index: -1;
 						transition: opacity .5s ease, top 0s linear;
 					}
 				
@@ -294,6 +296,7 @@ header.header {
 	
 		&.pinned-logo {
 			opacity: 1;
+			z-index: 0;
 		}
 	
 		&.load-logo {

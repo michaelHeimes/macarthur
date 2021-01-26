@@ -18,13 +18,16 @@ get_header(); ?>
 				    <div class="columns-banner grid-container fluid offset-content">
 				    
 					    <div class="heading-wrap grid-x grid-padding-x">
-					
-							<h1 class="cell small-12"><?php the_field('ph_heading');?></h1>
-						
+							<div class="cell small-12">
+								<div class="inner">
+									<h1><?php the_field('ph_heading');?></h1>
+								</div>
+							</div>
 					    </div>
 							
 						<?php if( have_rows('ph_icon_and_info_columns') ):?>
-						<div class="columns-wrap grid-x grid-padding-x">
+						<div class="columns-wrap">
+							<div class="grid-x grid-padding-x">
 							<?php while ( have_rows('ph_icon_and_info_columns') ) : the_row();?>	
 							
 							<?php if( have_rows('single_column') ):?>
@@ -56,6 +59,7 @@ get_header(); ?>
 							<?php endif;?>
 						
 							<?php endwhile;?>
+							</div>
 						</div>
 						<?php endif;?>
 						
@@ -99,11 +103,11 @@ get_header(); ?>
 									
 									<div class="slider-nav grid-x grid-padding-x align-right">
 										<div class="buttons-wrap cell">
-											<button class="prev no-style cell-shrink">
-												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg"/>
+											<button class="prev no-style cell-shrink" value="slide_left"  aria-label="Slide Left">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg" alt="arrow left"/>
 											</button>
-											<button class="next no-style cell-shrink">
-												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg"/>
+											<button class="next no-style cell-shrink" value="slide_right" aria-label="Slide Right">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg" alt="arrow right"/>
 											</button>
 										</div>
 									</div>

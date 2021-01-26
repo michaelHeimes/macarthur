@@ -17,9 +17,11 @@ get_header(); ?>
 			    
 				    <div class="heading-wrap grid-x grid-padding-x">
 				
-						<h1 class="cell small-12"><?php the_field('error_404_heading', 'options');?></h1>
-					
-						<p class="cell small-12"><?php the_field('error_404_text', 'options');?></p>
+						<div class="cell small-12">
+							<h1><?php the_field('error_404_heading', 'options');?></h1>
+						
+							<p><?php the_field('error_404_text', 'options');?></p>
+						</div>
 						
 						<div class="btn-wrap cell small-12">
 							<a class="button lg" href="<?php echo home_url(); ?>">Go To Home</a>							
