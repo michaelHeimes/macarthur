@@ -34,12 +34,8 @@
 
 	</head>
 			
-	<body data-barba="wrapper">
+	<body <?php body_class(); ?> data-barba="wrapper">
 		
-	<div id="smoothstate-container">
-	
-		<div id="body" class="off-canvas-wrapper <?php echo join( ' ', get_body_class() ); ?>">
-			
 		<?php if( is_front_page() ):?>
 		
 		<div id="preloader" class="preloader" style="display: none;">
@@ -57,6 +53,8 @@
 		</div>
 		
 		<?php endif;?>
+
+		<div class="off-canvas-wrapper">
 			
 			<!-- Load off-canvas container. Feel free to remove if not using. -->			
 			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
