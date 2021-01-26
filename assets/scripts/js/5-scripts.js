@@ -14,6 +14,53 @@ jQuery( document ).ready(function($) {
 		
 	};
 	
+	_app.smoothState = function() {
+	   var options = {
+	            prefetch: true,
+	            cacheLength: 2,
+	            blacklist: ".blacklist",
+	            onStart: {
+	                duration: 10, // Duration of our animation 2500
+	                render: function($container) {
+	                    // Add your CSS animation reversing class
+
+	                    // Restart your animation
+	                    smoothState.restartCSSAnimations();
+	                }
+	            },
+	            onReady: {
+	                duration: 0,
+	                render: function($container, $newContent) {
+		                		                
+	                    // Remove your CSS animation reversing class
+
+	                    // Inject the new content
+	                    $container.html($newContent);
+	                }  
+	             
+	            },
+	            onAfter: function() { //Call Back Functions after page load
+	                
+	                console.log("done");
+	                $(document).foundation();
+		   			$(function() {
+						_app.init();
+						$(".preloader").fadeOut(0);
+						$('.off-canvas-content').css('opacity', '1');
+					});	        
+					
+					$('.slick-slider').each(function(index, el) {
+						if ($.isFunction($.fn.slick)) {
+							$(this).slick('unslick');
+						}
+					});   
+  	            
+	            }
+	        },
+		smoothState = $('#smoothstate-container').smoothState(options).data('smoothState');
+		
+	}
+	
 
 	_app.barba = function() {
 		
@@ -67,7 +114,7 @@ jQuery( document ).ready(function($) {
 			}
 
 			// add classes here for a css transition
-			$('body').addClass('barba-transition');
+			$('.body').addClass('barba-transition');
 
 			// start progress animation when barba link is clicked
 			if (Modernizr.touch || $(window).width() <= 1024) {
@@ -151,14 +198,14 @@ jQuery( document ).ready(function($) {
 
 
 			// remove classes here for a css transition
-			$('body').removeClass('barba-transition');
+			$('.body').removeClass('barba-transition');
 
 			// copy over body classes
 /*
-			var classes = $('#body').data('classes');
+			var classes = $('.body').data('classes');
 			console.log(classes);
 			if (classes != undefined && classes.length >= 4) {
-				$('body').attr('class', classes);
+				$('.body').attr('class', classes);
 			}
 */
 
@@ -166,10 +213,10 @@ jQuery( document ).ready(function($) {
 /*
 			if ($('#wpadminbar').length > 0) {
 				var edit = $('#wpadminbar #wp-admin-bar-edit');
-				if ($('#body').data('edit-href').length > 0) {
+				if ($('.body').data('edit-href').length > 0) {
 					edit.show();
-					edit.find('a').text($('#body').data('edit-label'));
-					edit.find('a').attr('href', $('#body').data('edit-href'));
+					edit.find('a').text($('.body').data('edit-label'));
+					edit.find('a').attr('href', $('.body').data('edit-href'));
 				} else {
 					edit.hide();
 				}
@@ -300,7 +347,7 @@ jQuery( document ).ready(function($) {
 	
 	// 	Preloader
 	_app.preloader = function() {
-		if ( $('body').hasClass('home') ){
+		if ( $('.body').hasClass('home') ){
 	
 			$(".preloader").fadeIn(300);
 		  	
@@ -452,7 +499,7 @@ jQuery( document ).ready(function($) {
 	
 	_app.improvement_slider = function() {
 	// 	Home Page Improvement Slider
-		if ($('body').hasClass('home')) {
+		if ($('.body').hasClass('home')) {
 			
 			$(window).on("load resize", function() {
 				var $button1Width = $('button.line-offset-const').width();
@@ -527,7 +574,7 @@ jQuery( document ).ready(function($) {
 	
 	_app.articles_filter = function() {
 		// 	Articles Filter
-		if ($('body').hasClass('page-template-articles-page')) {
+		if ($('.body').hasClass('page-template-articles-page')) {
 	
 			// Set initial active item	
 			document.querySelector('#cat-filter button:first-child').classList.add('active'); // Set initial active state
@@ -602,14 +649,9 @@ jQuery( document ).ready(function($) {
 	}
 	
 	_app.podcast_page_toggle = function() {
-		if ($('body').hasClass('page-template-podcast-page')) {
+		if ($('.body').hasClass('page-template-podcast-page')) {
 						
 			$('a#all-podcasts-label').addClass('initial');
-			
-			
-			$('a#all-podcasts-label').on('click', function(e) {
-				console.log("loaded");
-			});	
 			
 			if ($('a#all-podcasts-label').hasClass('initial') ) {
 	
@@ -653,17 +695,18 @@ jQuery( document ).ready(function($) {
 // 		is_barba = typeof is_barba !== 'undefined' ? is_barba : false;
 		_app.emptyParentLinks();
 		_app.preloader();
-// 		_app.barba();
 		_app.ajaxloadmore();
 		_app.desktop_menu();
 		_app.desktop_menu();
 		_app.mobile_menu();
 		_app.hero_drawers();
-		_app.improvement_slider();
+// 		_app.improvement_slider();
 		_app.articles_filter();
 		_app.podcast_player();
 		_app.podcast_page_toggle();
 		_app.mentorship_slider();
+// 		_app.barba();
+		_app.smoothState();
 	}
 
 

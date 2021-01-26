@@ -34,39 +34,43 @@
 
 	</head>
 			
-	<body <?php body_class(); ?> data-barba="wrapper">
+	<body data-barba="wrapper">
 		
-		<?php if( is_front_page() ):?>
-		
-		<div id="preloader" class="preloader" style="display: none;">
-			<div class="bg" style="background-image: url(<?php the_field('loader_background_image', 'options');?>)"></div>
+		<div id="smoothstate-container">
 			
-			<?php 
-			$image = get_field('loader_logo', 'option');
-			if( !empty( $image ) ): ?>
-			<div class="img-wrap">
-			    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-			    <div class="vertical-line" style="opacity: 0"><div class="circ"></div></div>
-			</div>
-			<?php endif; ?>
-			
-		</div>
-		
-		<?php endif;?>
-
-		<div class="off-canvas-wrapper">
-			
-			<!-- Load off-canvas container. Feel free to remove if not using. -->			
-			<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
-			
-			<div class="off-canvas-content" <?php if( is_front_page() ):?>style="opacity: 0;"<?php endif;?> data-off-canvas-content>
+			<div class="body <?php echo join( ' ', get_body_class() ); ?>">
+					
+				<?php if( is_front_page() ):?>
 				
-				<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
-							
-					 <!-- This navs will be applied to the topbar, above all content 
-						  To see additional nav styles, visit the /parts directory -->
-					 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
-	 	
-				</header> <!-- end .header -->
+				<div id="preloader" class="preloader" style="display: none;">
+					<div class="bg" style="background-image: url(<?php the_field('loader_background_image', 'options');?>)"></div>
+					
+					<?php 
+					$image = get_field('loader_logo', 'option');
+					if( !empty( $image ) ): ?>
+					<div class="img-wrap">
+					    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+					    <div class="vertical-line" style="opacity: 0"><div class="circ"></div></div>
+					</div>
+					<?php endif; ?>
+					
+				</div>
 				
-				<div data-barba="container" class="barba-container" data-barba-namespace="<?php the_title();?>">
+				<?php endif;?>
+		
+				<div class="off-canvas-wrapper">
+					
+					<!-- Load off-canvas container. Feel free to remove if not using. -->			
+					<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
+					
+					<div class="off-canvas-content" <?php if( is_front_page() ):?>style="opacity: 0;"<?php endif;?> data-off-canvas-content>
+						
+						<header class="header" role="banner" data-sticky data-margin-top="0" data-sticky-on="small">
+									
+							 <!-- This navs will be applied to the topbar, above all content 
+								  To see additional nav styles, visit the /parts directory -->
+							 <?php get_template_part( 'parts/nav', 'topbar' ); ?>
+			 	
+						</header> <!-- end .header -->
+						
+						<div data-barba="container" class="barba-container" data-barba-namespace="<?php the_title();?>">

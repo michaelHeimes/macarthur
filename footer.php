@@ -7,9 +7,8 @@
  * For more info: https://developer.wordpress.org/themes/basics/template-files/#template-partials
  */			
  ?>
-		</div>	
-		
-		</div>		
+			</div>
+			
 				<footer class="footer" role="contentinfo">
 					
 					<div class="grid-container fluid">
@@ -64,9 +63,8 @@
 								<span class="small-caps"><a href="https://www.push10.com/" target="_blank">Web Design by Push10 Branding Agency</a></span>
 							</div>
 
-						
 						</div> <!-- end #inner-footer -->
-					
+						
 					</div>
 				
 				</footer> <!-- end .footer -->
@@ -74,8 +72,46 @@
 			</div>  <!-- end .off-canvas-content -->
 					
 		</div> <!-- end .off-canvas-wrapper -->
+					
+		<?php wp_footer(); ?>
+		
+			</div> <!-- end .body -->
+		
+		</div> <!-- end smoothstate -->
 		
 		<div class="podcast-player-wrap" style="display: none;">
+			
+<script>	
+jQuery( document ).ready(function($) {		
+		if($('.podcast-player-wrap').length) {
+			
+			var $player = $('.podcast-player-wrap');
+			var $playerURL = "https://open.spotify.com/embed/episode/";
+			var $close = $('.podcast-player-wrap button');
+			
+	
+			$( 'article.single-podcast button' ).each(function( index ) {
+			
+				var $this = $(this);
+				
+				var $playButtonId = $($this).data('episode');
+				
+				$this.click(function(e) {
+					e.preventDefault();				
+					$('.podcast-player-wrap iframe').attr('src', $playerURL + $playButtonId);
+					$player.addClass('show').fadeIn(300);
+				});			
+			})
+			
+			$close.click(function(e) {
+				e.preventDefault();
+				$player.addClass('show').fadeOut(300);
+			});
+		
+		}
+});		
+</script>
+			
 			
 			<div class="btn-wrap text-right">
 				<button type="button" class="no-style small-caps">Close</button>
@@ -84,8 +120,6 @@
 			<iframe data-target="persistent-player.spotifyEmbed" src="" width="100%" height="152" frameborder="0" allowtransparency="true" allow="encrypted-media" style="height: 152px;"></iframe>	
 			
 		</div>
-				
-		<?php wp_footer(); ?>
 		
 	</body>
 	
