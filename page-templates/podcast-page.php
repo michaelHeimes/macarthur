@@ -15,7 +15,7 @@ get_header(); ?>
 			    
 			    <section class="banner">
 				    
-				    <div class="grid-container fluid">
+				    <div class="grid-container fluid offset-content">
 				    
 					    <div class="inner grid-x grid-padding-x">
 						    

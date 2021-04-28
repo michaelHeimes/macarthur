@@ -15,14 +15,16 @@ get_header(); ?>
 				
 			    <section class="banner">
 				    
-				    <div class="grid-container fluid">
+				    <div class="grid-container fluid offset-content">
 					    <div class="grid-x grid-padding-x">
 					    
 						    <div class="left cell small-12 medium-6">
 							    <?php 
 								$image = get_field('ph_image');
 								if( !empty( $image ) ): ?>
+								<div class="img-wrap">
 								    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								</div>
 								<?php endif; ?>
 						    </div>				    
 							    

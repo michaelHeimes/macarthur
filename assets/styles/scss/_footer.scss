@@ -3,6 +3,10 @@ footer.footer {
 	border-top: $border;
 	padding-top: 2.85em;
 	
+	>.grid-container.fluid {
+		max-width: 1530px;
+	}
+	
 	img.footer-logo {
 		max-width: 74px;
 		
@@ -15,13 +19,19 @@ footer.footer {
 	.left {
 		
 		.footer-copy {
+			max-width: 400px;
 			font-size: rem-calc(22);
+			font-size: rem-calc(16);
 			line-height: 1;
 			
 			@include breakpoint(medium) {
 				padding-left: .18rem;
 			}
 			
+		}
+		
+		.small-caps {
+			font-size: rem-calc(8px) !important; 
 		}
 		
 	}
@@ -44,11 +54,12 @@ footer.footer {
 		}
 					
 		a {
-			font-size: rem-calc(18);
+			font-size: rem-calc(16);
 			color: $text-white;
 			
 			@include breakpoint(medium) {
 				font-size: rem-calc(22);
+				font-size: rem-calc(16);
 			}
 			
 		}

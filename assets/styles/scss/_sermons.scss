@@ -24,9 +24,10 @@
 		}
 		
 		.left {
-			margin-bottom: 2em;
+			margin-bottom: 2rem;
 			
 			@include breakpoint(medium) {
+				padding-left: 0;
 				margin-bottom: 0;
 			}
 			
@@ -81,7 +82,16 @@
 				padding-bottom: 5.2em;
 				
 				h2 {
-					margin-bottom: 0.85em;
+					margin-bottom: .34em;
+				}
+				
+				h3.sub-heading {
+					font-family: $body-font-family;
+					font-size: rem-calc(22);
+					color: $white;
+					letter-spacing: 0;
+					line-height: 1;
+					margin-bottom: 3.09em;
 				}
 				
 			&:last-child() {

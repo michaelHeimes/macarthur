@@ -346,10 +346,8 @@ get_header(); ?>
 														
 														<span class="first"></span>						
 				
-														<div class="third and-third">and</div>
+<!-- 														<div class="third and-third">and</div> -->
 														
-														<span class="second"></span>
-				
 														<?php if( have_rows('imp_slide_2') ):?>
 														<button class="toggle-nav-2 third no-style" data-slide="2" aria-label="Show Slide Two">
 															<?php while ( have_rows('imp_slide_2') ) : the_row();?>																		
@@ -357,7 +355,17 @@ get_header(); ?>
 															
 															<?php endwhile;?>
 														</button>
-														<?php endif;?>	
+														<?php endif;?>															
+														<span class="second"></span>
+														
+														<?php if( have_rows('imp_slide_3') ):?>
+														<button class="toggle-nav-3 third no-style" data-slide="3" aria-label="Show Slide Three">
+															<?php while ( have_rows('imp_slide_3') ) : the_row();?>																		
+															<?php the_sub_field('button_label');?>
+															
+															<?php endwhile;?>
+														</button>
+														<?php endif;?>													
 														
 													</div>
 												
@@ -423,6 +431,31 @@ get_header(); ?>
 																
 															</div>
 
+															<div id="toggle-3" class="toggle-content">
+																
+																<?php if( have_rows('imp_slide_3') ):?>
+																	<?php while ( have_rows('imp_slide_3') ) : the_row();?>	
+																
+																	<div class="icon-wrap">
+																	
+																	<?php 
+																	$image = get_sub_field('icon');
+																	if( !empty( $image ) ): ?>
+																	    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+																	<?php endif; ?>
+																	
+																	</div>
+			
+																	<div class="text-wrap">
+																		<h3><?php the_sub_field('heading');?></h3>
+																		<?php the_sub_field('copy');?>
+																	</div>
+																
+																	<?php endwhile;?>
+																<?php endif;?>
+																
+															</div>
+
 															
 														</div>
 														
@@ -443,13 +476,22 @@ get_header(); ?>
 													
 													<span class="first"></span>						
 			
-													<div class="third and-third">and</div>
-													
-													<span class="second"></span>
-			
+<!-- 													<div class="third and-third">and</div> -->
+
 													<?php if( have_rows('imp_slide_2') ):?>
 													<button class="toggle-nav-2 third no-style" data-slide="2">
 														<?php while ( have_rows('imp_slide_2') ) : the_row();?>																		
+														<?php the_sub_field('button_label');?>
+														
+														<?php endwhile;?>
+													</button>
+													<?php endif;?>	
+													
+													<span class="second"></span>
+			
+													<?php if( have_rows('imp_slide_3') ):?>
+													<button class="toggle-nav-3 third no-style" data-slide="3">
+														<?php while ( have_rows('imp_slide_3') ) : the_row();?>																		
 														<?php the_sub_field('button_label');?>
 														
 														<?php endwhile;?>
@@ -471,6 +513,12 @@ get_header(); ?>
 												<?php if( have_rows('imp_slide_2') ):?>
 													<?php while ( have_rows('imp_slide_2') ) : the_row();?>	
 													<div class="bg bg-2" style="background-image: url(<?php the_sub_field('image');?>)"></div>
+													<?php endwhile;?>
+												<?php endif;?>
+
+												<?php if( have_rows('imp_slide_3') ):?>
+													<?php while ( have_rows('imp_slide_3') ) : the_row();?>	
+													<div class="bg bg-3" style="background-image: url(<?php the_sub_field('image');?>)"></div>
 													<?php endwhile;?>
 												<?php endif;?>
 						

@@ -3,7 +3,7 @@
 	<div class="inner" data-equalizer-watch>
 		
 		<div class="top">
-	
+			
 			<div class="date-tag small-caps">
 				<?php the_sub_field('date_or_tag');?>
 			</div>
@@ -13,6 +13,12 @@
 			<?php if ( $description = get_sub_field('short_description') ):?>
 			<div class="description">
 				<?php echo $description;?>
+			</div>
+			<?php endif;?>
+
+			<?php if ( $citation = get_sub_field('citation') ):?>
+			<div class="description citation">
+				<?php echo $citation;?>
 			</div>
 			<?php endif;?>
 			

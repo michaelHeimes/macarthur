@@ -85,9 +85,15 @@
 	.inner-padding {
 		padding-top: 5.75em;
 		padding-bottom: 5.75em;
+		max-width: 1220px;
 	}
 	
 	.copy {
+		
+		h2 {
+			margin-bottom: .42em;
+		}
+		
 		position: relative;
 		border-bottom: $border;
 	}

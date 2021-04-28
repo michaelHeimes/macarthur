@@ -40,6 +40,7 @@ get_header(); ?>
 					<div class="grid-container fluid offset-content left-line">
 						<div class="inner-padding grid-x grid-padding-x">
 							<div class="cell small-12">
+								<h2 class="h3"><?php the_field('copy_heading');?></h2>
 								<?php the_field('copy');?>
 							</div>
 						</div>

@@ -700,7 +700,7 @@ jQuery( document ).ready(function($) {
 		_app.desktop_menu();
 		_app.mobile_menu();
 		_app.hero_drawers();
-// 		_app.improvement_slider();
+		_app.improvement_slider();
 		_app.articles_filter();
 		_app.podcast_player();
 		_app.podcast_page_toggle();

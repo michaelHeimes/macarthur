@@ -101,6 +101,8 @@ get_header(); ?>
 							<div class="single-sermon-row cell small-12">
 								<h2><?php the_sub_field('heading');?></h2>
 								
+								<h3 class="sub-heading"><?php the_sub_field('sub-heading');?></h3>
+								
 								<?php if( have_rows('sermons') ):?>
 								<div class="box-wrap sm grid-x grid-padding-x" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
 									<?php while ( have_rows('sermons') ) : the_row();?>	

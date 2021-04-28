@@ -1,6 +1,21 @@
 .page-template-podcast-page {
 	
-	.banner {		
+	.banner {	
+		
+		.offset-content {
+			max-width: 1160px;
+		}
+		
+		.left {
+			margin-bottom: 2rem;
+			
+			@include breakpoint(medium) {
+				padding-left: 0;
+				margin-bottom: 0;
+			}
+			
+		}
+			
 		.inner {
 			padding-top: 6.2em;
 			padding-bottom: 7.3em;
@@ -8,6 +23,7 @@
 			h3 {
 				letter-spacing: 0;
 				margin-bottom: 1.03em;
+				max-width: 642px;
 			}
 	
 			.spotify-apple-buttons-wrap {

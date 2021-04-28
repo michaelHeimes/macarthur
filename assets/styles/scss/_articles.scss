@@ -3,6 +3,10 @@
 		padding-top: 6.3em;
 		padding-bottom: 7.45em;
 		
+		.offset-content {
+			max-width: 1050px;
+		}
+		
 		h1 {
 			max-width: 540px;	
 			margin-bottom: .377em;
@@ -11,6 +15,17 @@
 				margin-left: -19%;
 			}
 			
+		}
+		
+		.left {
+			.img-wrap {
+				margin-bottom: 2em;
+				
+				@include breakpoint(medium) {
+					margin-bottom: 0;
+				}
+				
+			}
 		}
 		
 		.right {
