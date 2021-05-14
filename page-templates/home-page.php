@@ -502,11 +502,11 @@ get_header(); ?>
 												
 											</div>
 											
-											<div class="bg-wrap toggle-content-slider show-for-medium">
+											<div class="bg-wrap opacity-57 toggle-content-slider show-for-medium">
 												
 												<?php if( have_rows('imp_slide_1') ):?>
 													<?php while ( have_rows('imp_slide_1') ) : the_row();?>	
-													<div class="bg bg-1" style="background-image: url(<?php the_sub_field('image');?>)"></div>
+													<div class="bg bg-1 " style="background-image: url(<?php the_sub_field('image');?>)"></div>
 													<?php endwhile;?>
 												<?php endif;?>
 						
@@ -691,7 +691,7 @@ get_header(); ?>
 							
 							<div class="right cell small-12 medium-7">
 								
-								<div class="img-wrap">
+								<div class="img-wrap opacity-57">
 									
 								<?php 
 								$image = get_sub_field('image');
@@ -734,7 +734,7 @@ get_header(); ?>
 							
 							<div class="right cell small-12 medium-7">
 								
-								<div class="img-wrap">
+								<div class="img-wrap opacity-57">
 									
 								<?php 
 								$image = get_sub_field('image');

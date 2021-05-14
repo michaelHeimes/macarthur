@@ -108,6 +108,19 @@ body.home {
 	
 }
 
+// Image Opacities
+.opacity-57,
+.content-area img,
+.page-template-workshops-page .single-workshop img,
+.banner img:not(.icon),
+.page-template-about-page .alternating-rows img {
+	opacity: .57;
+}
+
+.page-template-single-workshop-page .entry-content img {
+	opacity: .8;
+}
+
 // Podcast Player
 .podcast-player-wrap {
 	position: fixed;
@@ -232,6 +245,7 @@ body.home {
 	}
 		
 	h1 {
+		position: relative;
 		color: $primary-color;
 		max-width: 1125px;
 		max-width: 1190px;

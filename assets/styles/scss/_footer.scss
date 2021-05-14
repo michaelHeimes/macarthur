@@ -5,6 +5,14 @@ footer.footer {
 	
 	>.grid-container.fluid {
 		max-width: 1530px;
+		padding-right: 2.5rem;
+		padding-left: 2.5rem;
+		
+		@include breakpoint(medium) {
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		
 	}
 	
 	img.footer-logo {
@@ -62,6 +70,12 @@ footer.footer {
 				font-size: rem-calc(16);
 			}
 			
+		}
+		
+		.contact-wrap {
+			@include breakpoint(medium) {
+				padding-top: 1.5rem;
+			}
 		}
 		
 		.social-wrap {

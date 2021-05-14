@@ -41,7 +41,7 @@ get_header(); ?>
 											<?php 
 											$image = get_sub_field('icon');
 											if( !empty( $image ) ): ?>
-											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+											    <img class="icon" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 											<?php endif; ?>
 										</div>
 										
@@ -69,7 +69,8 @@ get_header(); ?>
 			    
 			    <section class="testimonials">
 				    
-				    <div class="bg grid-container fluid offset-content left-line" style="background-image: url(<?php the_field('testimonials_background_image');?>)">	
+				    <div class="bg grid-container fluid offset-content left-line">	
+					    <div class="bg opacity-57" style="background-image: url(<?php the_field('testimonials_background_image');?>)"></div>
 					    
 					    <div class="mask"></div>
 					    

@@ -45,15 +45,7 @@
 			</h3>
 			
 			<div class="date small-caps">
-				<?php 
-				$format_in = 'd/m/Y'; // the format your value is saved in (set in the field options)
-				$format_out = 'M, d Y'; // the format you want to end up with
-				
-				$date = DateTime::createFromFormat($format_in, get_field('date'));
-				
-				echo $date->format( $format_out );
-					
-				?>
+				<?php $post_date = get_the_date( 'M, d Y' ); echo $post_date;?>
 			</div>	
 			
 			<div class="excerpt-wrap">

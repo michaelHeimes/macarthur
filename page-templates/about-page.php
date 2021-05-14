@@ -41,7 +41,7 @@ get_header(); ?>
 											<?php 
 											$image = get_sub_field('icon');
 											if( !empty( $image ) ): ?>
-											    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+											    <img class="icon" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 											<?php endif; ?>
 										</div>
 										
