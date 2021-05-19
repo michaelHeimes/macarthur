@@ -31,7 +31,10 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
-
+		<?php
+			gravity_form_enqueue_scripts(1, true);
+			gravity_form_enqueue_scripts(2, true);	
+		?>
 	</head>
 			
 	<body data-barba="wrapper">

@@ -256,6 +256,10 @@ body.home {
 // Banners with heading and three columns
 .columns-banner.grid-container {
 	max-width: none;
+
+	@include breakpoint(medium) {
+		position: relative;
+	}
 	
 	.heading-wrap .inner,
 	.columns-wrap {

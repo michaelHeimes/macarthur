@@ -1,4 +1,6 @@
 jQuery( document ).ready(function($) {
+
+	// $('body').hide();
 	
 	var _app = window._app || {};
 	
@@ -25,7 +27,9 @@ jQuery( document ).ready(function($) {
 	                    // Add your CSS animation reversing class
 
 	                    // Restart your animation
+						console.log('onstart');
 	                    smoothState.restartCSSAnimations();
+						
 	                }
 	            },
 	            onReady: {
@@ -35,13 +39,13 @@ jQuery( document ).ready(function($) {
 	                    // Remove your CSS animation reversing class
 
 	                    // Inject the new content
+						console.log('onready');
 	                    $container.html($newContent);
 	                }  
 	             
 	            },
 	            onAfter: function() { //Call Back Functions after page load
 	                
-	                console.log("done");
 	                $(document).foundation();
 		   			$(function() {
 						_app.init();
@@ -54,6 +58,8 @@ jQuery( document ).ready(function($) {
 							$(this).slick('unslick');
 						}
 					});   
+
+					console.log("done");
   	            
 	            }
 	        },
@@ -417,9 +423,19 @@ jQuery( document ).ready(function($) {
 		var $navTrigger = $('button.mobile-nav-trigger');
 		var $mobileNav = $('.mobile-nav');
 		
-		$($navTrigger).click(function(e) {
-			$mobileNav.fadeToggle(300);
-			$navTrigger.toggleClass('open');
+		// $($navTrigger).click(function(e) {
+		// 	$mobileNav.fadeToggle(300);
+		// 	$navTrigger.toggleClass('open');
+		// });
+		$($navTrigger).on('click', function (e) {
+			e.preventDefault();
+			if ($navTrigger.hasClass('open')) {
+				$navTrigger.removeClass('open');
+				$mobileNav.fadeOut(300);
+			} else {
+				$navTrigger.addClass('open');
+				$mobileNav.fadeIn(300);
+			}
 		});
 	}
 		
@@ -532,20 +548,33 @@ jQuery( document ).ready(function($) {
 			
 			});
 	
-		
-			$('.toggle-content-slider').slick({
-				fade: true,
-				arrows: false
-			});
+			// $('.toggle-content-slider').slick({
+			// 	fade: true,
+			// 	arrows: false
+			// });
+
+			$('.toggle-content-slider').children('.toggle-content').hide();
+			$('.toggle-content-slider').children('.toggle-content:first-child').show();
 			
-			$('.toggle-nav-wrap button[data-slide]').click(function(e) {
-				e.preventDefault();
+			// $('.toggle-nav-wrap button[data-slide]').click(function(e) {
+			// 	e.preventDefault();
 				
+			// 	$(this).addClass('active');
+			// 	$(this).siblings('button').removeClass('active');
+				
+			// 	var slideno = $(this).data('slide');
+			// 	$('.toggle-content-slider').slick('slickGoTo', slideno - 1);
+			// });
+
+			$('.toggle-nav-wrap button[data-slide]').on('click', function(e){
+				e.preventDefault();
 				$(this).addClass('active');
 				$(this).siblings('button').removeClass('active');
-				
-				var slideno = $(this).data('slide');
-				$('.toggle-content-slider').slick('slickGoTo', slideno - 1);
+				var target = $(this).attr('data-slide');
+				$('.toggle-content').hide();
+				$('.toggle-content:nth-child(' + target + ')').show();
+				$('.bg').removeClass('active');
+				$('.bg[data-slide="' + target + '"]').addClass('active');
 			});
 				
 		}
@@ -674,18 +703,38 @@ jQuery( document ).ready(function($) {
 		// 	Mentorship Slider
 		if($('.testimonial-slider').length) {
 		
-			$('.testimonial-slider').slick({
-				fade: true,
-				arrows: false
-			});		
+			// $('.testimonial-slider').slick({
+			// 	fade: true,
+			// 	arrows: false
+			// });		
+
+			//Can be added as CSS or in PHP, was having issue adding the attribute via PHP for some reason
+
+			$('.testimonial-slider').children('.single-testimonial').hide();
+			$('.testimonial-slider').children('.single-testimonial:first-child').show().addClass('active');
+
 			
-			$('.testimonials .slider-nav .prev').click(function(){ 
-				$('.testimonial-slider').slick('slickPrev');
+			$('.testimonials .slider-nav .prev').click(function(e){ 
+				e.preventDefault();
+				// $('.testimonial-slider').slick('slickPrev');
+				if ($('.single-testimonial.active').prev().hasClass('single-testimonial')) {
+					$('.single-testimonial.active').removeClass('active').hide().prev().show().addClass('active');
+				} else { // reset
+					$('.single-testimonial.active').removeClass('active').hide();
+					$('.testimonial-slider').children('.single-testimonial:last-child').show().addClass('active');
+				}
 			} );
 			
 			$('.testimonials .slider-nav .next').click(function(e){
 				e.preventDefault(); 
-				$('.testimonial-slider').slick('slickNext');
+				// $('.testimonial-slider').slick('slickNext');
+				if ($('.single-testimonial.active').next().hasClass('single-testimonial')) {
+					$('.single-testimonial.active').removeClass('active').hide().next().show().addClass('active');
+				} else { // reset
+					$('.single-testimonial.active').removeClass('active').hide();
+					$('.testimonial-slider').children('.single-testimonial:first-child').show().addClass('active');
+				}
+
 			} );
 	
 		}
@@ -697,10 +746,10 @@ jQuery( document ).ready(function($) {
 		_app.preloader();
 		_app.ajaxloadmore();
 		_app.desktop_menu();
-		_app.desktop_menu();
+		// _app.desktop_menu(); //Called Twice
 		_app.mobile_menu();
 		_app.hero_drawers();
-		_app.improvement_slider();
+		_app.improvement_slider(); //Temp
 		_app.articles_filter();
 		_app.podcast_player();
 		_app.podcast_page_toggle();

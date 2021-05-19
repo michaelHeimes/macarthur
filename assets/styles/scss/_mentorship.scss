@@ -8,6 +8,10 @@
 		bottom: 0;
 		background-size: cover;
 		background-position: center center;
+
+		@include breakpoint(medium) {
+			position: relative;
+		}
 		
 		.mask {
 			position: absolute;

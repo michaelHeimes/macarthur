@@ -174,39 +174,8 @@ get_header(); ?>
 									<div class="inner-padding">
 											
 										<h2>All Episodes</h2>
-<!--
-										<?php 			
-									    $args = array(  
-									        'post_type' => 'podcast_post',
-									        'post_status' => 'publish',
-									        'posts_per_page' => -1, 
-									        'order' => 'ASC',
-									        'cat' => 'home',
-									    );
-									
-									    $loop = new WP_Query( $args ); 
-									        
-									    while ( $loop->have_posts() ) : $loop->the_post();?>
-									    
-									    <article class="single-podcast">
-										    
-											<h3><?php the_title();?> </h3>
-											
-											<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span>Listen Now</span></button>
-									
-									    </article>
-									
-										<?php
-									    endwhile;
-									
-									    wp_reset_postdata(); 
-									    
-									    ?>
--->
 									    
 					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap" post_type="podcast_post" taxonomy="podcast_name" taxonomy_terms="' . $cat . '" taxonomy_operator="IN" order="ASC" transition_container="true" posts_per_page="5" paging="true" paging_show_at_most="5" paging_scroll="true:400" paging_controls="false" cache="false"]'); ?>
-																	
-																	
 									
 									</div>
 								</div>
