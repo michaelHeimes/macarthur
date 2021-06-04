@@ -23,7 +23,7 @@ get_header(); ?>
 							    <?php 
 								$image = get_field('ph_image');
 								if( !empty( $image ) ): ?>
-								    <img class="opacity-57" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+								    <img class="opacity-img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 								<?php endif; ?>
 						    </div>
 					
@@ -102,21 +102,61 @@ get_header(); ?>
 								<h2><?php the_sub_field('heading');?></h2>
 								
 								<h3 class="sub-heading"><?php the_sub_field('sub-heading');?></h3>
-								
-								<?php if( have_rows('sermons') ):?>
-								<div class="box-wrap sm grid-x grid-padding-x" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
-									<?php while ( have_rows('sermons') ) : the_row();?>	
-									
-									<?php if( have_rows('single_sermon') ):?>
-										<?php while ( have_rows('single_sermon') ) : the_row();?>	
-									
-											<?php get_template_part('parts/loop', 'resource-box');?>
+
+								<?php $cards = count(get_sub_field('sermons'));?>							
+							
+								<?php if( $cards <= 3 ):?>
+
+									<?php if( have_rows('sermons') ):?>
+									<div class="box-wrap sm grid-x grid-padding-x" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
+										<?php while ( have_rows('sermons') ) : the_row();?>	
 										
+										<?php if( have_rows('single_sermon') ):?>
+											<?php while ( have_rows('single_sermon') ) : the_row();?>	
+										
+												<?php get_template_part('parts/loop', 'resource-box');?>
+											
+											<?php endwhile;?>
+										<?php endif;?>
+									
 										<?php endwhile;?>
+									</div>
 									<?php endif;?>
+									
+								<?php else:?>
 								
-									<?php endwhile;?>
-								</div>
+									<?php if( have_rows('sermons') ):?>
+									<div class="box-wrap sermon-slider sm" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
+																				
+										
+										<?php while ( have_rows('sermons') ) : the_row();?>	
+										
+										<?php if( have_rows('single_sermon') ):?>
+											<?php while ( have_rows('single_sermon') ) : the_row();?>	
+										
+												<?php get_template_part('parts/loop', 'resource-box');?>
+											
+											<?php endwhile;?>
+										<?php endif;?>
+									
+										<?php endwhile;?>
+									
+										
+									</div>
+									
+									<div class="slider-nav grid-x grid-padding-x align-right">
+										<div class="buttons-wrap cell">
+											<button class="prev no-style cell-shrink" value="slide_left"  aria-label="Slide Left">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-left.svg" alt="arrow left"/>
+											</button>
+											<button class="next no-style cell-shrink" value="slide_right" aria-label="Slide Right">
+												<img src="/wp-content/themes/macarthur/assets/images/arrow-slider-right.svg" alt="arrow right"/>
+											</button>
+										</div>
+									</div>
+									
+									<?php endif;?>
+									
 								<?php endif;?>
 						
 							</div>

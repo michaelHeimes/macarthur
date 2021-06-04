@@ -311,8 +311,17 @@
 						
 					}
 					
-					a.arrow-link:not(:last-child) {
-						margin-right: 3em;
+					.links-wrap {
+							
+						div {
+							padding-bottom: 1em;
+						
+							a.arrow-link:not(:last-child) {
+								margin-right: 3em;
+							}
+							
+						}
+						
 					}
 					
 				}

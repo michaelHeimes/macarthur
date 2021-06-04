@@ -32,6 +32,7 @@ get_header(); ?>
 								<h1><?php the_field('pb_title');?></h1>
 								<h3><?php the_field('pb_intro_text');?></h3>
 								
+<!--
 								<div class="spotify-apple-buttons-wrap">
 									<div class="grid-x grid-padding-x">
 									
@@ -52,13 +53,16 @@ get_header(); ?>
 									
 									</div>
 								</div>
+-->
 								
+<!--
 								<div class="content-toggle-buttons-wrap tabs" data-tabs id="podcast-tabs">
 																		
 									<button id="about" class="no-style tabs-title is-active" aria-label="Show About Content"><a href="#about-podcasts">About</a></button>
 									<button id="episodes" class="no-style tabs-title" aria-label="Show All Podcasts"><a href="#all-podcasts">Episodes</a></button>
 																		
 								</div>
+-->
 							
 							</div>
 						
@@ -73,12 +77,20 @@ get_header(); ?>
 				    <section id="about-podcasts" class="about-podcasts tabs-panel is-active" data-equalizer data-equalize-on="medium" data-equalize-on-stack="true">
 					    
 					    <div class="top">
-					    
+						    					    
 						    <div class="grid-container fluid offset-content left-line">
-							    <div class="grid-x grid-padding-x">					    
+							    <div class="grid-x grid-padding-x">										    
+								    			    
 								    <div class="cell small-12 recent-pods-wrap">
 									    <div class="inner-padding">
-											<h2>Latest Episodes</h2>
+										    
+											<div class="copy-wrap">
+										    	<h2><?php the_field('about_heading');?></h2>
+												<div><?php the_field('about_copy');?></div>
+									    	</div>
+										    
+<!--
+											<h3>Latest Episodes</h3>
 											
 											<div class="box-wrap sm grid-x grid-padding-x">
 											
@@ -138,6 +150,7 @@ get_header(); ?>
 											    
 											    ?>
 											</div>
+-->
 																					
 									    </div>
 								    </div>
@@ -149,22 +162,7 @@ get_header(); ?>
 						    <div class="bottom-line"></div>
 						
 						</div>
-					    
-					    <div class="copy-wrap">
-					    	<div class="grid-container fluid offset-content">
-						    	<div class="grid-x grid-padding-x">
-							    	<div class="cell small-12">
-								    	<div class="inner-padding">
-									    	<div class="grid-container">
-										    	<h3><?php the_field('about_heading');?></h3>
-												<p><?php the_field('about_copy');?></p>
-									    	</div>
-								    	</div>
-							    	</div>
-						    	</div>
-					    	</div>
-				    	</div>
-				    
+					    				    
 				    </section>
 				    
 				    <section id="all-podcasts" class="all-podcasts tabs-panel">
@@ -174,8 +172,39 @@ get_header(); ?>
 									<div class="inner-padding">
 											
 										<h2>All Episodes</h2>
+<!--
+										<?php 			
+									    $args = array(  
+									        'post_type' => 'podcast_post',
+									        'post_status' => 'publish',
+									        'posts_per_page' => -1, 
+									        'order' => 'ASC',
+									        'cat' => 'home',
+									    );
+									
+									    $loop = new WP_Query( $args ); 
+									        
+									    while ( $loop->have_posts() ) : $loop->the_post();?>
+									    
+									    <article class="single-podcast">
+										    
+											<h3><?php the_title();?> </h3>
+											
+											<button class="button no-style" data-episode="<?php the_field('episode_id');?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/pod-play.svg"/><span>Listen Now</span></button>
+									
+									    </article>
+									
+										<?php
+									    endwhile;
+									
+									    wp_reset_postdata(); 
+									    
+									    ?>
+-->
 									    
 					    					<?php echo do_shortcode('[ajax_load_more scroll="false" button_label="Load More" container_type="div" transition_container_classes="box-wrap" post_type="podcast_post" taxonomy="podcast_name" taxonomy_terms="' . $cat . '" taxonomy_operator="IN" order="ASC" transition_container="true" posts_per_page="5" paging="true" paging_show_at_most="5" paging_scroll="true:400" paging_controls="false" cache="false"]'); ?>
+																	
+																	
 									
 									</div>
 								</div>

@@ -32,7 +32,7 @@
 								
 								<div class="source-org copyright cell show-for-medium">
 									<span class="small-caps">Copyright &copy; <?php echo date('Y'); ?> MacArthur Center. All Rights Reserved.</span><br>
-									<span class="small-caps"><a href="https://www.push10.com/" target="_blank">Web Design by Push10 Branding Agency</a></span>									
+									<span class="small-caps push-link-wrap"><a href="https://www.push10.com/" target="_blank">Web Design</a> by Push10 <a href="https://www.push10.com/" target="_blank">Branding Agency</a></span>									
 								</div>
 		    				</div>
 							
@@ -49,7 +49,7 @@
 									
 									</div>
 									
-									<nav class="social-wrap cell shrink medium-12">
+									<nav class="social-wrap cell small-12 medium-12">
 										<div><a href="<?php the_field('facebook_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook-icon.svg" alt="facebook-icon"/></a></div>
 										<div><a href="<?php the_field('youtube_url', 'options');?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube-icon.svg" alt="youtube-icon"/></a></div>
 									</nav>
@@ -60,7 +60,7 @@
 							
 							<div class="source-org copyright cell hide-for-medium">
 								<span class="small-caps">Copyright &copy; <?php echo date('Y'); ?> MacArthur Center. All Rights Reserved.</span><br>
-								<span class="small-caps"><a href="https://www.push10.com/" target="_blank">Web Design by Push10 Branding Agency</a></span>
+								<span class="small-caps push-link-wrap"><a href="https://www.push10.com/" target="_blank">Web Design</a> by Push10 <a href="https://www.push10.com/" target="_blank">Branding Agency</a></span>
 							</div>
 
 						</div> <!-- end #inner-footer -->

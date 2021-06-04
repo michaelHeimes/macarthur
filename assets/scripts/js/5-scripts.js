@@ -382,18 +382,20 @@ jQuery( document ).ready(function($) {
 				$('.off-canvas-content').css('opacity', '1');
 				
 				gsap.to($preloaderImg, {
-					y: '0%', duration: 3, delay: 0, ease: 'expo.out'
+					y: '0%', duration: 5, delay: 0, ease: 'expo.out'
 			  	});	
 		
 				gsap.to($preloaderLine, {
-					y: '0%', duration: 3, delay: 0, ease: 'expo.out'
+					y: '0%', duration: 5, delay: 0, ease: 'expo.out'
 			  	});	
 		
+/*
 				$(".preloader").addClass('loaded');	
 		
 			  	setTimeout(function(){ 
 					$(".preloader").addClass('loaded');	
 				}, 2000);
+*/
 		
 			  	setTimeout(function(){ 
 				  	
@@ -401,7 +403,7 @@ jQuery( document ).ready(function($) {
 					
 					$(".preloader").fadeOut(700);
 					
-				}, 3500);
+				}, 6000);
 				
 			});
 			
@@ -548,24 +550,25 @@ jQuery( document ).ready(function($) {
 			
 			});
 	
-			// $('.toggle-content-slider').slick({
-			// 	fade: true,
-			// 	arrows: false
-			// });
+			$('.toggle-content-slider').slick({
+				fade: true,
+				arrows: false
+			});
 
 			$('.toggle-content-slider').children('.toggle-content').hide();
 			$('.toggle-content-slider').children('.toggle-content:first-child').show();
 			
-			// $('.toggle-nav-wrap button[data-slide]').click(function(e) {
-			// 	e.preventDefault();
+			$('.toggle-nav-wrap button[data-slide]').click(function(e) {
+				e.preventDefault();
 				
-			// 	$(this).addClass('active');
-			// 	$(this).siblings('button').removeClass('active');
+				$(this).addClass('active');
+				$(this).siblings('button').removeClass('active');
 				
-			// 	var slideno = $(this).data('slide');
-			// 	$('.toggle-content-slider').slick('slickGoTo', slideno - 1);
-			// });
+				var slideno = $(this).data('slide');
+				$('.toggle-content-slider').slick('slickGoTo', slideno - 1);
+			});
 
+/*
 			$('.toggle-nav-wrap button[data-slide]').on('click', function(e){
 				e.preventDefault();
 				$(this).addClass('active');
@@ -576,6 +579,7 @@ jQuery( document ).ready(function($) {
 				$('.bg').removeClass('active');
 				$('.bg[data-slide="' + target + '"]').addClass('active');
 			});
+*/
 				
 		}
 	}
@@ -703,13 +707,27 @@ jQuery( document ).ready(function($) {
 		// 	Mentorship Slider
 		if($('.testimonial-slider').length) {
 		
-			// $('.testimonial-slider').slick({
-			// 	fade: true,
-			// 	arrows: false
-			// });		
+	
+			$('.testimonial-slider').slick({
+				fade: true,
+				arrows: false,
+				adaptiveHeight: true,
+				autoplay: true,
+				autoplaySpeed: 7000
+			});		
+			
+			$('.testimonials .slider-nav .prev').click(function(){ 
+				$('.testimonial-slider').slick('slickPrev');
+			} );
+			
+			$('.testimonials .slider-nav .next').click(function(e){
+				e.preventDefault(); 
+				$('.testimonial-slider').slick('slickNext');
+			} );
 
 			//Can be added as CSS or in PHP, was having issue adding the attribute via PHP for some reason
 
+/*
 			$('.testimonial-slider').children('.single-testimonial').hide();
 			$('.testimonial-slider').children('.single-testimonial:first-child').show().addClass('active');
 
@@ -736,9 +754,123 @@ jQuery( document ).ready(function($) {
 				}
 
 			} );
+			
+			setInterval(function () {
+		        slider();
+		    }, 7000);		
+		
+			var slider = function () {
+				
+				if ($('.single-testimonial.active').prev().hasClass('single-testimonial')) {
+					$('.single-testimonial.active').removeClass('active').hide().prev().show().addClass('active');
+				} else { // reset
+					$('.single-testimonial.active').removeClass('active').hide();
+					$('.testimonial-slider').children('.single-testimonial:last-child').show().addClass('active');
+				}
+				
+			}
+*/
 	
 		}
 	}
+	
+	_app.sermon_slider = function() {
+		if($('.sermon-slider').length) {
+			
+			$('.sermon-slider').slick({
+				dots: false,
+				arrows: false,
+				infinite: true,
+				speed: 300,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				responsive: [
+					{
+						breakpoint: 1024,
+						settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+					}
+					},
+					{
+						breakpoint: 992,
+						settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+					}
+	
+				]
+			});	
+		
+			$('.sermons .slider-nav .prev').click(function(){ 
+				$('.sermon-slider').slick('slickPrev');
+			} );
+			
+			$('.sermons .slider-nav .next').click(function(e){
+				e.preventDefault(); 
+				$('.sermon-slider').slick('slickNext');
+			} );
+		
+/*
+		var divs = $(".sermon-slider .box");
+		for(var i = 0; i < divs.length; i+=3) {
+		  divs.slice(i, i+3).wrapAll("<div class='slide grid-x grid-padding-x'></div>");
+		}
+		
+		var $slide = $('.sermon-slider .slide');
+		
+		
+		var slideCount = $($slide).length;
+		var slideWidth = $($slide).width();
+		var slideHeight = $($slide).height();
+		var sliderUlWidth = slideCount * slideWidth;
+		
+		$('.sermon-slider').css({ width: slideWidth, height: slideHeight });
+	    
+	    $('.sermon-slider .slide:last-child').prependTo('.sermon-slider.box-wrap  .slider-track');
+	
+	    function moveLeft() {
+
+	        $('.sermon-slider.box-wrap .slider-track').animate({
+	            left: + slideWidth
+	        }, 200, function () {
+	            $('.sermon-slider.box-wrap .slide:last-child').prependTo('.sermon-slider.box-wrap .slider-track');
+	            $('.sermon-slider.box-wrap  .slider-track').css('left', '');
+	        });
+	    };
+	
+	    function moveRight() {
+	        $('.sermon-slider.box-wrap .slider-track').animate({
+	            left: - slideWidth
+	        }, 200, function () {
+	            $('.sermon-slider.box-wrap .slide:first-child').appendTo('.sermon-slider.box-wrap .slider-track');
+	            $('.sermon-slider.box-wrap .slider-track').css('left', '');
+	        });
+	    };
+	
+	    $('a.control_prev').click(function (e) {
+		    e.preventDefault();
+	        moveLeft();	        
+	    });
+	
+	    $('a.control_next').click(function (e) {
+		    e.preventDefault();
+	        moveRight();
+	    });
+*/
+
+		};
+	}
+	
 		
 	_app.init = function() {
 // 		is_barba = typeof is_barba !== 'undefined' ? is_barba : false;
@@ -754,8 +886,9 @@ jQuery( document ).ready(function($) {
 		_app.podcast_player();
 		_app.podcast_page_toggle();
 		_app.mentorship_slider();
+		_app.sermon_slider();
 // 		_app.barba();
-		_app.smoothState();
+// 		_app.smoothState();
 	}
 
 

@@ -69,8 +69,8 @@ get_header(); ?>
 			    
 			    <section class="testimonials">
 				    
-				    <div class="bg grid-container fluid offset-content left-line">	
-					    <div class="bg opacity-57" style="background-image: url(<?php the_field('testimonials_background_image');?>)"></div>
+				    <div class="grid-container fluid offset-content left-line">	
+					    <div class="bg opacity-img" style="background-image: url(<?php the_field('testimonials_background_image');?>)"></div>
 					    
 					    <div class="mask"></div>
 					    
@@ -79,13 +79,13 @@ get_header(); ?>
 								<div class="inner-padding">
 									<div class="quotes">“”</div>
 					    					    
-									<?php if( have_rows('testimonials') ):?>
+									<?php if( have_rows('testimonials') ):
+										?>
 									<div class="testimonial-slider">
 										<?php while ( have_rows('testimonials') ) : the_row();?>	
 									
-										<?php if( have_rows('single_testimonial') ):?>
+										<?php if( have_rows('single_testimonial') ): ?>
 											<?php while ( have_rows('single_testimonial') ) : the_row();?>	
-											
 											<div class="single-testimonial">
 												
 												<h2><?php the_sub_field('large_text');?></h2>
@@ -98,7 +98,7 @@ get_header(); ?>
 											<?php endwhile;?>
 										<?php endif;?>
 									
-										<?php endwhile;?>
+										<?php endwhile;	?>
 									</div>
 									<?php endif;?>
 									
@@ -123,7 +123,7 @@ get_header(); ?>
 			    </section>	
 			    
 			    <section class="form">
-				    <div class="bg grid-container fluid offset-content left-line">	
+				    <div class="grid-container fluid offset-content left-line">	
 					    					    
 					    <div class="grid-x grid-padding-x">					    
 						    <div class="cell small-12">
@@ -132,6 +132,7 @@ get_header(); ?>
 										
 										<div class="left cell small-12 medium-6 large-5">
 											<h2><?php the_field('form_heading');?></h2>
+											<div class="copy-wrap"><?php the_field('form_copy');?></div>
 										</div>
 
 										<div class="left cell small-12 medium-6 large-7">
